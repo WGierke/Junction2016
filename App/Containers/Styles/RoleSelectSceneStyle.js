@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native'
 import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
 
 export default {
@@ -8,24 +7,24 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
     margin: Metrics.doubleBaseMargin,
-    borderRadius: Metrics.buttonRadius,
+    borderRadius: Metrics.buttonRadius
   },
   head: {
     fontSize: Metrics.text.large,
     textAlign: 'center'
   },
   green: {
-    backgroundColor: Colors.googleGreen,
+    backgroundColor: Colors.googleGreen
   },
   blue: {
-    backgroundColor: Colors.googleBlue,
+    backgroundColor: Colors.googleBlue
   },
   content: {
     color: 'white',
     fontSize: Metrics.text.medium,
-    fontWeight: '200',
+    fontWeight: '200'
   },
   flowWrapper: {
-    flex: 1,
+    flex: 1
   }
 }

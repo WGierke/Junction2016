@@ -1,21 +1,11 @@
 import React, { PropTypes } from 'react'
-import { View, Text, ListView, Image, ActivityIndicator, TouchableHighlight } from 'react-native'
+import { Text } from 'react-native'
 
 import { connect } from 'react-redux'
-import { scan } from '../Reducers/action'
-
-import Icon from 'react-native-vector-icons/Ionicons'
-
 
 // Styles
-import styles from './Styles/ConnectScreenStyle'
-import { Metrics, Images } from '../Themes'
 
 class EnterIDScene extends React.Component {
-
-  constructor (props) {
-    super(props)
-  }
 
   componentDidMount () {
   }
@@ -34,7 +24,7 @@ EnterIDScene.PropTypes = {
 const mapStateToProps = (state) => {
   return {
     devices: state.bluetooth.devices,
-    scanning: state.bluetooth.scanning,
+    scanning: state.bluetooth.scanning
   }
 }
 

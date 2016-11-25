@@ -1,7 +1,7 @@
 const scenes = {
   connect: 'ConnectScene',
   enterId: 'EnterIDScene',
-  roleSelect: 'RoleSelect',
+  roleSelect: 'RoleSelect'
 }
 
 export default scenes
