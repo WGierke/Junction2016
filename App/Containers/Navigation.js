@@ -2,8 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { View, Navigator, TouchableHighlight, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+
 import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
+import RoleSelect from './RoleSelectScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -12,18 +14,20 @@ import {Scenes} from '../Constants/'
 class Navigation extends Component {
   componentWillMount () {
     this.renderScene = this.renderScene.bind(this)
+    // this.applyStyle = this.applyStyle.bind(this)
   }
 
   componentDidMount () {
   }
 
   renderScene (route, navigator) {
-    console.log('###########################' + this.props.scene)
     switch (this.props.scene) {
       case Scenes.connect:
         return <Connect navigator={navigator}  {...route.passProps} />
       case Scenes.enterId:
         return <EnterID navigator={navigator}  {...route.passProps} />
+      case Scenes.roleSelect:
+        return <RoleSelect navigator={navigator}  {...route.passProps} />
       default:
         return <route.component navigator={navigator} route={route} {...route.passProps} />
     }
@@ -63,15 +67,20 @@ class Navigation extends Component {
     }
   }
 
+  // applyStyle() {
+  //   if(this.scene)
+  //   return 
+  // }
+
   render () {
     return (
       <Navigator
-        navigationBar={
-          <Navigator.NavigationBar
-            style={styles.nav}
-            title='Navigatopn'
-            routeMapper={this.navigationRouteMapper()} />
-          }
+        // navigationBar={
+        //   <Navigator.NavigationBar
+        //     style={styles.nav}
+        //     title='Navigatopn'
+        //     routeMapper={this.navigationRouteMapper()} />
+        //   }
         sceneStyle={{paddingTop: 64}}
         initialRoute={{ component: this.props.scene }}
         renderScene={this.renderScene}
@@ -81,7 +90,7 @@ class Navigation extends Component {
 }
 
 Navigation.propTypes = {
-  scene: PropTypes.func
+  scene: PropTypes.string
 }
 
 const mapStateToDispatch = dispatch => ({
