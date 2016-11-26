@@ -54,7 +54,7 @@ class Navigation extends Component {
         return <EnterID navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
         this.component = RoleSelect
-        return <Packlist navigator={navigator} {...route.passProps} />
+        return <RoleSelect navigator={navigator} {...route.passProps} />
       case Scenes.treatment:
         this.component = RoleSelect
         return <Treatment navigator={navigator} {...route.passProps} />
