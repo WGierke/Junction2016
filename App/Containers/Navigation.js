@@ -118,7 +118,7 @@ class Navigation extends Component {
         configureScene={this.configureScene}
         navigationBar={this.renderNavBar()}
         sceneStyle={sceneStyle()}
-        initialRoute={{ component: Scenes.treatment }}
+        initialRoute={{ component: Scenes.roleSelect }}
         renderScene={this.renderScene}
       />
     )

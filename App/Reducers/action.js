@@ -9,6 +9,11 @@ export const addDevice = (device) => ({
   payload: {device}
 })
 
+export const addPatientId = (patientid) => ({
+  type: 'ADD_PATIENT_ID',
+  payload: {patientid}
+})
+
 export const scan = () => (dispatch) => {
   // dispatch(scanStart())
   // return bluetooth.scanDevices()

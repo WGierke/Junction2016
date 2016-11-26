@@ -18,7 +18,7 @@ export default {
     fontSize: 120,
     textAlign: 'center',
     color: Colors.googleRed,
-    marginBottom: 100,
+    marginBottom: 80,
     justifyContent: 'flex-start'
   },
   green: {
@@ -36,5 +36,14 @@ export default {
   flowWrapper: {
     flex: 1,
     justifyContent: 'center'
+  },
+  textInput: {
+    textAlign:'center',
+    alignItems: 'center',
+    height: 40,
+    margin: Metrics.baseMargin,
+    flex:1,
+    borderColor: 'gray',
+    borderBottomWidth: 2,
   }
 }
