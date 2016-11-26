@@ -5,8 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Task.create!(name:"Preparation")
-Task.create!(name:"Anaesthesia")
-Task.create!(name:"Operation")
-Task.create!(name:"Finished")
-Operation.create!(name: "Knee Fixing", task: Task.all, current_task_id: Task.find(1).id)
+OperationTask.delete_all
+Task.delete_all
+Operation.delete_all
+
+Task.create!(name:"Preparation", description: "We prepare the operating room as well as the patient.")
+Task.create!(name:"Anaesthesia", description: "We sedate the patient to increase his feeling of well-being during the operation process.")
+Task.create!(name:"Operation", description: "We perform the actual medical surgery.")
+Task.create!(name:"Finished", description: "The operation is finished. The patient is now allowed to wake up slowly from the surgery.")
+Operation.create!(name: "Knee Fixing", task: Task.all, current_task_id: Task.first.id)

@@ -5,9 +5,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
+import RegistrationForm from './RegistrationFormScene'
 import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
 import ParentOverview from './ParentOverviewScene'
+import Packlist from './PacklistScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
