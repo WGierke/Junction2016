@@ -5,7 +5,8 @@ const scenes = {
   treatment: 'TreatmentScene',
   parentOverview: 'ParentOverviewScene',
   packingList: 'PackingList',
-  registrationForm: 'RegistrationForm'
+  registrationForm: 'RegistrationForm',
+  adventureIntro: 'adventureIntroScene'
 }
 
 export default scenes

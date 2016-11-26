@@ -12,6 +12,7 @@ import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
 import ParentOverview from './ParentOverviewScene'
 import PackingList from './PackingListScene'
+import AdventureIntro from './AdventureIntroScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -65,11 +66,11 @@ class Navigation extends Component {
       case Scenes.parentOverview:
         return <ParentOverview navigator={navigator} {...route.passProps} />
       case Scenes.registrationForm:
-        this.component = RegistrationForm
         return <RegistrationForm navigator={navigator} route={route} {...route.passProps} />
       case Scenes.packingList:
-        this.component = PackingList
         return <PackingList navigator={navigator} {...route.passProps} />
+      case Scenes.adventureIntro:
+        return <AdventureIntro navigator={navigator} {...route.passProps} />
       default:
         return <RoleSelect navigator={navigator} {...route.passProps} />
     }
@@ -128,7 +129,7 @@ class Navigation extends Component {
   }
 
   renderNavBar() {
-    let ignore = [Scenes.roleSelect]
+    let ignore = [Scenes.roleSelect, Scenes.adventureIntro]
     // let stack = this.navigator.getCurrentRoutes()
     // let last = stack[stack.length-1]
     if(ignore.indexOf(this.props.scene) == -1)

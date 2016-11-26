@@ -54,7 +54,7 @@ class RoleSelectScene extends React.Component {
               autoFocus={true}
               />
             <Text style={styles.head}>Continue as</Text>
-            <TouchableHighlight underlayColor={Colors.background} style={styles.viewHalf} onPress={() => this.clickHandler(Scenes.enterId)}>
+            <TouchableHighlight underlayColor={Colors.background} style={styles.viewHalf} onPress={() => this.clickHandler(Scenes.adventureIntro)}>
               <View>
                 <Text style={styles.content}>Child</Text>
               </View>
