@@ -2,6 +2,7 @@
   {
     "path": "Insurance Card",
     "name": "Insurance Card",
+    "icon": "ios-heart",
     "details": "Insurance Card, Family Doctor Contact Information",
     "checked": false
   },

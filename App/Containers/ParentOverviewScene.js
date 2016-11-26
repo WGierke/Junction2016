@@ -33,24 +33,24 @@ class Grid extends React.Component {
   render() {
     return <View style={[styles.container, { flexDirection: 'column' }]}>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.treatment)} style={styles.matrixInner}>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.treatment)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
             <IconCell iconName='ios-pulse' description='Live Updates' backgroundColor={Colors.googleGreen} />
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} style={styles.matrixInner}>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
             <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} />
           </View>
         </TouchableHighlight>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.packingList)} style={styles.matrixInner}>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.packingList)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
             <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} />
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.registrationForm)} style={styles.matrixInner}>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.registrationForm)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
             <IconCell iconName='ios-clipboard' description='Patient Data' backgroundColor={Colors.googleYellow} />
           </View>
@@ -111,7 +111,7 @@ class SummaryListView extends React.Component {
 
   render() {
     return (
-        <View style={[styles.flowWrapper, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
+        <View style={[styles.checklistContainer, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
           <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Checklist</Text>
           <ScrollView>
             {this.renderView()}

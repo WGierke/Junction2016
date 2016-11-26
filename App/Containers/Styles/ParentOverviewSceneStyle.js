@@ -17,8 +17,7 @@ export default {
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-
+    alignItems: 'center'
   },
   matrixInner: {
     flex: 1,
@@ -41,6 +40,12 @@ export default {
   },
   row: {
       padding: 5,
+  },
+  checklistContainer: {
+    flex: 1,
+    marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20
   },
   item: {
       flexDirection: 'row',

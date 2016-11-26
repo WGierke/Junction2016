@@ -9,13 +9,13 @@ import TreatmentScene from './TreatmentScene'
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
-import { Metrics } from '../Themes'
+import { Metrics, Colors } from '../Themes'
 
 class RoleSelectScene extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Enter patient ID',
+      text: '',
     };
   }
   componentWillMount () {
@@ -27,7 +27,7 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
-    let title = 'Some Titlte'
+    let title = 'Carl Fredricksen (' + this.state.text + ')'
     this.props.addPatientId(this.state.text)
     this.props.changeScene({name, title}, false)
   }
@@ -38,13 +38,6 @@ class RoleSelectScene extends React.Component {
 
   render() {
     const dismissKeyboard = require('dismissKeyboard')
-    let viewStyles = (color) => {
-      // return styles[color]
-      return {
-        ...styles.viewHalf,
-        // ...styles[color]
-      }
-    }
     return (
       <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
         <View>
@@ -56,17 +49,17 @@ class RoleSelectScene extends React.Component {
             <TextInput
               style={styles.textInput}
               onChangeText={(text) => this.setState({ text })}
-              placeholder={this.state.text}
+              placeholder='Enter patient ID'
               keyboardType='numeric'
               autoFocus={true}
               />
             <Text style={styles.head}>Continue as</Text>
-            <TouchableHighlight style={viewStyles('green')} onPress={() => this.clickHandler(Scenes.enterId)}>
+            <TouchableHighlight underlayColor={Colors.background} style={styles.viewHalf} onPress={() => this.clickHandler(Scenes.enterId)}>
               <View>
                 <Text style={styles.content}>Child</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.parentOverview)}>
+            <TouchableHighlight underlayColor={Colors.background} style={styles.viewHalf} onPress={() => this.clickHandler(Scenes.parentOverview)}>
               <View>
                 <Text style={styles.content}>Parent</Text>
               </View>
