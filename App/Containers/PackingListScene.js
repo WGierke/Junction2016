@@ -13,7 +13,7 @@ import styles from './Styles/PackingListStyle'
 import { Scenes } from '../Constants'
 import { Metrics } from '../Themes'
 
-class Packinglist extends Component {
+class PackingList extends Component {
     constructor(props) {
         super(props);
     }
@@ -85,4 +85,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Packinglist)
+export default connect(mapStateToProps, mapDispatchToProps)(PackingList)

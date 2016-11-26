@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { ListView, Text, View, ScrollView } from 'react-native'
+import { ListView, Text, View, TouchableHighlight, Alert, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import CheckBox from 'react-native-check-box'
 import Toast from 'react-native-easy-toast'
@@ -25,15 +25,36 @@ class IconCell extends React.Component {
 }
 
 class Grid extends React.Component {
+
+  clickHandler (scene) {
+    this.props.clickHandler(scene)
+  }
+
   render() {
     return <View style={[styles.container, { flexDirection: 'column' }]}>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={styles.matrixInner}><IconCell iconName='ios-pulse' description='Live Updates' backgroundColor={Colors.googleGreen} /></View>
-        <View style={styles.matrixInner}><IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} /></View>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.treatment)} style={styles.matrixInner}>
+          <View>
+            <IconCell iconName='ios-pulse' description='Live Updates' backgroundColor={Colors.googleGreen} />
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} style={styles.matrixInner}>
+          <View>
+            <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} />
+          </View>
+        </TouchableHighlight>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={styles.matrixInner}><IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} /></View>
-        <View style={styles.matrixInner}><IconCell iconName='ios-clipboard' description='Patient Data' backgroundColor={Colors.googleYellow} /></View>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.packingList)} style={styles.matrixInner}>
+          <View>
+            <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} />
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.registrationForm)} style={styles.matrixInner}>
+          <View>
+            <IconCell iconName='ios-clipboard' description='Patient Data' backgroundColor={Colors.googleYellow} />
+          </View>
+        </TouchableHighlight>
       </View>
     </View>
   }
@@ -113,10 +134,14 @@ class ParentOverviewScene extends React.Component {
     return false
   }
 
+  clickHandler (name) {
+    this.props.changeScene(name, false)
+  }
+
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-        <Grid style={[styles.flowWrapper, { flex: 0.5}]} />
+        <Grid clickHandler={(sceneName) => this.clickHandler(sceneName) } style={[styles.flowWrapper, { flex: 0.5}]} />
         <SummaryListView/>
       </View>
     )

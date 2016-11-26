@@ -9,7 +9,7 @@ import RegistrationForm from './RegistrationFormScene'
 import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
 import ParentOverview from './ParentOverviewScene'
-import Packlist from './PacklistScene'
+import PackingList from './PackingListScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -59,6 +59,12 @@ class Navigation extends Component {
         return <Treatment navigator={navigator} {...route.passProps} />
       case Scenes.parentOverview:
         return <ParentOverview navigator={navigator} {...route.passProps} />
+      case Scenes.registrationForm:
+        this.component = RegistrationForm
+        return <RegistrationForm navigator={navigator} {...route.passProps} />
+      case Scenes.packingList:
+        this.component = PackingList
+        return <PackingList navigator={navigator} {...route.passProps} />
       default:
         return <RoleSelect navigator={navigator} {...route.passProps} />
     }
