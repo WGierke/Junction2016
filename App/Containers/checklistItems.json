@@ -1,0 +1,18 @@
+[
+  {
+    "path": "Fill out patient forms",
+    "name": "Fill out patient forms",
+    "checked": false
+  },
+  {
+    "path": "Check packing list",
+    "name": "Check packing list",
+    "checked": false
+  },
+  {
+    "path": "Read treatment information",
+    "name": "Read treatment information",
+    "details": "Towel, Toothbrush, Toothpaste, Face Cloth",
+    "checked": false
+  }
+]
