@@ -11,6 +11,7 @@ const scene = (state = Scenes.roleSelect, action) => {
 }
 
 const showNavbar = (state = true, action) => {
+  console.log("####################################\n " + action.type + "\n######################################")
   switch (action.type) {
     case 'CHANGE_SCENE':
       return action.payload.showNavbar ? action.payload.showNavbar : true

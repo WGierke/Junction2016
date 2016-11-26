@@ -4,23 +4,12 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import { connect } from 'react-redux'
 import { changeScene, hideNavbar, addPatientId } from '../Reducers/action'
+import TreatmentScene from './TreatmentScene'
 
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
 import { Metrics } from '../Themes'
-
-class UselessTextInput extends React.Component {
-  render() {
-    return (
-      <TextInput
-        {...this.props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
-        editable = {true}
-        maxLength = {40}
-      />
-    );
-  }
-}
 
 class RoleSelectScene extends React.Component {
   constructor(props) {
@@ -30,7 +19,7 @@ class RoleSelectScene extends React.Component {
     };
   }
   componentWillMount () {
-    this.props.hideNavbar()
+    // this.props.hideNavbar()
   }
 
   componentDidMount () {
@@ -39,11 +28,7 @@ class RoleSelectScene extends React.Component {
 
   clickHandler (name) {
     this.props.addPatientId(this.state.text)
-    this.props.changeScene(name)
-  }
-
-  renderNavbar() {
-    return false
+    this.props.changeScene({name})
   }
 
   render() {
