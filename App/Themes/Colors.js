@@ -24,6 +24,7 @@ const colors = {
   googleBlue: '#4285F4',
   googleRed: '#DD4b39',
   googleYellow: '#EEB211',
+  lightGray: '#E6E6E6'
 }
 
 export default colors
