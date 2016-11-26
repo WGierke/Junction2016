@@ -20,7 +20,6 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
-    console.log('############### ', name)
     this.props.changeScene(name)
   }
 

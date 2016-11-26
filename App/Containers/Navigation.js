@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
 import RoleSelect from './RoleSelectScene'
+import Treatment from './TreatmentScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -24,32 +25,25 @@ class Navigation extends Component {
   }
 
   componentDidMount () {
-    // Navigator.push({
-    //   component: EnterID,
-    //   passProps: {
-    //     // name: name
-    //   }
-    // })
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("New Property: " + nextProps.scene)
-    // this.
-    if(this.navigator){
+
+    if(this.navigator && this.props.scene != nextProps.scene){
       console.log("Navigator has instance #####################")
       this.navigator.push({
-      component: EnterID,
-      passProps: {
-        // name: name
-      }
-    })
+        component: nextProps.scene,
+        passProps: {
+          // name: name
+        }
+      })
     }
   }
 
   renderScene (route, navigator) {
-    console.log("Render Scene +++++++++++++++++++++++++++++++")
-    this.navigator = navigator
-    switch (this.props.scene) {
+    if(!this.navigator)
+      this.navigator = navigator
+    switch (route.component) {
       case Scenes.connect:
         this.component = Connect
         return <Connect navigator={navigator} {...route.passProps} />
@@ -59,6 +53,9 @@ class Navigation extends Component {
       case Scenes.roleSelect:
         this.component = RoleSelect
         return <RoleSelect navigator={navigator} {...route.passProps} />
+      case Scenes.treatment:
+        this.component = RoleSelect
+        return <Treatment navigator={navigator} {...route.passProps} />
       default:
         return <route.component navigator={navigator} route={route} {...route.passProps} />
     }
@@ -106,10 +103,11 @@ class Navigation extends Component {
   }
 
   configureScene(route, routeStack) {
-    return Navigator.SceneConfigs.PushFromRight 
+    return Navigator.SceneConfigs.FadeAndroid
   }
 
   render () {
+    let initialScene = this.props.scene
     let sceneStyle = () => {
       return {
         paddingTop: Metrics.navBarHeight
@@ -120,7 +118,7 @@ class Navigation extends Component {
         configureScene={this.configureScene}
         navigationBar={this.renderNavBar()}
         sceneStyle={sceneStyle()}
-        initialRoute={{ component: this.props.scene }}
+        initialRoute={{ component: Scenes.treatment }}
         renderScene={this.renderScene}
       />
     )
