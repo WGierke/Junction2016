@@ -26,10 +26,10 @@ class Grid extends React.Component {
     return <View style={[styles.container, { flexDirection: 'column' }]}>
       <View style={{ flex: 1, flexDirection: 'row' }}>
         <View style={styles.matrixInner}><IconCell iconName='ios-pulse' description='Live Updates' backgroundColor={Colors.googleGreen} /></View>
-        <View style={styles.matrixInner}><IconCell iconName='ios-medical' description='Description' backgroundColor={Colors.googleBlue} /></View>
+        <View style={styles.matrixInner}><IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} /></View>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={styles.matrixInner}><IconCell iconName='ios-medkit-outline' description='Checklist' backgroundColor={Colors.googleRed} /></View>
+        <View style={styles.matrixInner}><IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} /></View>
         <View style={styles.matrixInner}><IconCell iconName='ios-clipboard' description='Patient Data' backgroundColor={Colors.googleYellow} /></View>
       </View>
     </View>
