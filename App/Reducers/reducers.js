@@ -16,5 +16,5 @@ export default combineReducers({
   lastAction,
   routine,
   patient,
-  lastAction
+  lastAction,
 })

@@ -4,6 +4,10 @@ import {Scenes} from '../Constants/'
 const scene = (state = Scenes.roleSelect, action) => {
   switch (action.type) {
     case 'CHANGE_SCENE':
+      console.log("New Scene------------ ", action.payload.name)
+      return action.payload.name
+    case 'POP_SCENE':
+      console.log("New Scene------------ ", action.payload.name)
       return action.payload.name
     default:
       return state
