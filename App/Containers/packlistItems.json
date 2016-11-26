@@ -3,35 +3,35 @@
     "path": "Insurance Card",
     "name": "Insurance Card",
     "icon": "ios-card",
-    "details": "Insurance Card, Family Doctor Contact Information",
+    "details": [],
     "checked": false
   },
   {
     "path": "Clothing",
     "name": "Clothing",
     "icon": "ios-shirt",
-    "details": "T-Shirts, Underwear, Socks, Sweatpants",
+    "details": ["T-Shirts", "Underwear", "Socks", "Sweatpants"],
     "checked": false
   },
   {
     "path": "Toiletries",
     "name": "Toiletries",
     "icon": "ios-water",
-    "details": "Towel, Toothbrush, Toothpaste, Face Cloth, Bathrobe, Flip-Flops",
+    "details": ["Towel", "Toothbrush", "Toothpaste", "Face Cloth", "Bathrobe", "Flip-Flops"],
     "checked": false
   },
   {
     "path": "Food",
     "name": "Food",
     "icon": "ios-pizza",
-    "details": "Instant Meals, Soups, Sweets",
+    "details": ["Instant Meals", "Soups", "Sweets"],
     "checked": false
   },
   {
     "path": "Entertainment",
     "name": "Entertainment",
     "icon": "ios-game-controller-a",
-    "details": "Books, Card and Board Games Pencils, Electronices with charging cable",
+    "details": ["Books", "Card and Board Games", "Pencils", "Electronices and charging cable"],
     "checked": false
   }
 ]
