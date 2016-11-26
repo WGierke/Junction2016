@@ -2,30 +2,35 @@ import { combineReducers } from 'redux'
 
 const mockData = 
   [
-  {
-  "id": 1,
-  "name": "Preparation",
-  "created_at": "2016-11-26T09:34:02.223Z",
-  "updated_at": "2016-11-26T09:34:02.223Z"
-  },
-  {
-  "id": 2,
-  "name": "Anaesthesia",
-  "created_at": "2016-11-26T09:34:06.711Z",
-  "updated_at": "2016-11-26T09:34:06.711Z"
-  },
-  {
-  "id": 3,
-  "name": "Operation",
-  "created_at": "2016-11-26T09:34:09.898Z",
-  "updated_at": "2016-11-26T09:34:09.898Z"
-  },
-  {
-  "id": 4,
-  "name": "Finished",
-  "created_at": "2016-11-26T09:34:13.355Z",
-  "updated_at": "2016-11-26T09:34:13.355Z"
-  }]
+{
+"id": 1,
+"name": "Preparation",
+"created_at": "2016-11-26T16:02:29.763Z",
+"updated_at": "2016-11-26T16:02:29.763Z",
+"description": "We prepare the operating room as well as the patient."
+},
+{
+"id": 2,
+"name": "Anaesthesia",
+"created_at": "2016-11-26T16:02:29.767Z",
+"updated_at": "2016-11-26T16:02:29.767Z",
+"description": "We sedate the patient to increase his feeling of well-being during the operation process."
+},
+{
+"id": 3,
+"name": "Operation",
+"created_at": "2016-11-26T16:02:29.779Z",
+"updated_at": "2016-11-26T16:02:29.779Z",
+"description": "We perform the actual medical surgery."
+},
+{
+"id": 4,
+"name": "Finished",
+"created_at": "2016-11-26T16:02:29.782Z",
+"updated_at": "2016-11-26T16:02:29.782Z",
+"description": "The operation is finished. The patient is now allowed to wake up slowly from the surgery."
+}
+]
 
 
 const steps = (routineObject=mockData, action) => {

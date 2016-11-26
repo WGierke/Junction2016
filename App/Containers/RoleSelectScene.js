@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import { connect } from 'react-redux'
 import { changeScene, hideNavbar, addPatientId } from '../Reducers/action'
+import TreatmentScene from './TreatmentScene'
 
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
@@ -18,7 +19,7 @@ class RoleSelectScene extends React.Component {
     };
   }
   componentWillMount () {
-    this.props.hideNavbar()
+    // this.props.hideNavbar()
   }
 
   componentDidMount () {
@@ -26,8 +27,9 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
+    let title = 'Some Titlte'
     this.props.addPatientId(this.state.text)
-    this.props.changeScene(name, false)
+    this.props.changeScene({name, title}, false)
   }
 
   renderNavbar() {
@@ -88,8 +90,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeScene: (name, showNavbar=true) => {
-      dispatch(changeScene({name}))
+    changeScene: (props, showNavbar=true) => {
+      dispatch(changeScene(props))
       if (!showNavbar) hideNavbar()
     },
     hideNavbar: () => {

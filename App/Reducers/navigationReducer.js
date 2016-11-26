@@ -10,7 +10,19 @@ const scene = (state = Scenes.roleSelect, action) => {
   }
 }
 
+const props = (state = {}, action) => {
+  switch (action.type) {
+    case 'CHANGE_SCENE':
+      return {
+        ...action.payload
+      }
+    default:
+      return {...state}
+  }
+}
+
 const showNavbar = (state = true, action) => {
+  console.log("####################################\n " + action.type + "\n######################################")
   switch (action.type) {
     case 'CHANGE_SCENE':
       return action.payload.showNavbar ? action.payload.showNavbar : true
@@ -23,5 +35,6 @@ const showNavbar = (state = true, action) => {
 
 export default combineReducers({
   scene,
-  showNavbar
+  showNavbar,
+  props
 })

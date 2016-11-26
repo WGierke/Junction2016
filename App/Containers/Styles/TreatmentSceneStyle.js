@@ -5,7 +5,8 @@ export default {
   listItem: {
     flex: 1,
     flexDirection: 'row',
-    padding: 15
+    padding: 15,
+    width: Metrics.screenWidth
   },
   selectedItem: {
     paddingTop: 20,
@@ -18,10 +19,10 @@ export default {
   subcontent: {
     fontSize: Metrics.text.extratiny,
     fontWeight: "100",
-    color: Colors.charcoal
+    color: Colors.charcoal,
   },
   subcontentSelected: {
-    fontSize: Metrics.text.tiny
+    fontSize: Metrics.text.tiny,
   },
   content: {
     fontSize: Metrics.text.tiny,
@@ -30,6 +31,7 @@ export default {
   status: {
     justifyContent: 'center',
     marginRight: Metrics.baseMargin,
+    flex: 12
   },
   statusIndicator: {
     borderRadius: 100,

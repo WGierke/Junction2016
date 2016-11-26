@@ -84,17 +84,20 @@ let subcontentStyle = () => {
 return style
     }
 
-return (
-  <View style={itemStyle()}>
-    <View style={styles.status}>
-      <View style={statusStyle()}></View>
-    </View>
-    <View style={styles.status}>
-      <Text style={contentStyle()}>{data.name.toUpperCase()}</Text>
-      <Text style={subcontentStyle()}>{data.name}</Text>
-    </View>
-  </View>
-)
+    return (
+      <View style={itemStyle()}>
+        <View style={
+            {justifyContent: 'center',
+            marginRight: Metrics.baseMargin,
+            flex: 1}}>
+          <View style={statusStyle()}></View>
+        </View>
+        <View style={styles.status}>
+          <Text style={contentStyle()}>{data.name.toUpperCase()}</Text>
+          <Text style={subcontentStyle()}>{data.description}</Text>
+        </View>
+      </View>
+    )
   }
 
 render() {

@@ -31,36 +31,28 @@ class Navigation extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
-    if(this.navigator && this.props.scene != nextProps.scene){
-      console.log("Navigator has instance #####################")
-      this.navigator.push({
+    console.log("Receives new Props: ", nextProps.scene)
+    this.navigator.push({
         component: nextProps.scene,
         passProps: {
-          // name: name
+          // title: nextProps.scene.title ? nextProps.scene.title : ''
+          ...nextProps.props
         }
       })
-    }
   }
 
   renderScene (route, navigator) {
-    if(!this.navigator)
-      this.navigator = navigator
+    console.log("----------------- RENDER SCENE --------------------------", route.component)
     switch (route.component) {
       case Scenes.connect:
-        this.component = Connect
         return <Connect navigator={navigator} {...route.passProps} />
       case Scenes.enterId:
-        this.component = EnterID
         return <EnterID navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
-        this.component = RoleSelect
         return <RoleSelect navigator={navigator} {...route.passProps} />
       case Scenes.treatment:
-        this.component = RoleSelect
         return <Treatment navigator={navigator} {...route.passProps} />
       case Scenes.parentOverview:
-        this.component = ParentOverview
         return <ParentOverview navigator={navigator} {...route.passProps} />
       case Scenes.registrationForm:
         this.component = RegistrationForm
@@ -69,15 +61,18 @@ class Navigation extends Component {
         this.component = PackingList
         return <PackingList navigator={navigator} {...route.passProps} />
       default:
-        return <route.component navigator={navigator} route={route} {...route.passProps} />
+        return <RoleSelect navigator={navigator} {...route.passProps} />
     }
+  }
+
+  configureScene(route, routeStack) {
+    return Navigator.SceneConfigs.HorizontalSwipeJump
   }
 
   navigationRouteMapper () {
     return {
       LeftButton (route, navigator, index, navState) {
-        return null
-        if (index > 0) {
+        if (index > 1) {
           return (
             <TouchableHighlight
               underlayColor='transparent'
@@ -103,20 +98,20 @@ class Navigation extends Component {
         }
       },
       Title (route, navigator, index, navState) {
-        return <Text style={{marginTop: 10}} />
+        if(route && route.passProps && route.passProps.title)
+          return <Text style={{marginTop: 10}}>{route.passProps.title}</Text>
       }
     }
   }
 
   renderNavBar() {
-    if(this.props.showNavbar)
+    let ignore = [Scenes.roleSelect]
+    // let stack = this.navigator.getCurrentRoutes()
+    // let last = stack[stack.length-1]
+    if(ignore.indexOf(this.props.scene) == -1)
       return <Navigator.NavigationBar
               style={styles.nav}
               routeMapper={this.navigationRouteMapper()} />
-  }
-
-  configureScene(route, routeStack) {
-    return Navigator.SceneConfigs.FadeAndroid
   }
 
   render () {
@@ -126,13 +121,15 @@ class Navigation extends Component {
         paddingTop: Metrics.navBarHeight
       }
     }
+
     return (
       <Navigator
         configureScene={this.configureScene}
-        navigationBar={this.renderNavBar()}
         sceneStyle={sceneStyle()}
-        initialRoute={{ component: Scenes.roleSelect }}
+        navigationBar={this.renderNavBar()}
+        initialRouteStack={[{ component: Scenes.roleSelect }]}
         renderScene={this.renderScene}
+        ref={(nav) => this.navigator = nav}
       />
     )
   }
@@ -148,7 +145,18 @@ const mapStateToDispatch = dispatch => ({
 
 const mapStateToProps = (state, _) => ({
   scene: state.navigation.scene,
+  props: state.navigation.props,
   showNavbar: state.navigation.showNavbar
 })
 
 export default connect(mapStateToProps, mapStateToDispatch)(Navigation)
+
+
+
+/**
+ * 
+  }
+ * 
+ * 
+ * 
+ */
