@@ -5,8 +5,9 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
       flex: 1,
-      backgroundColor: '#f3f2f2',
-      marginTop: 30
+      marginTop: 10,
+      marginLeft: 20,
+      marginRight: 20
   },
   item: {
       flexDirection: 'row',

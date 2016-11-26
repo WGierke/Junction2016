@@ -111,7 +111,7 @@ class SummaryListView extends React.Component {
 
   render() {
     return (
-        <View style={[styles.flowWrapper, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
+        <View style={[styles.checklistContainer, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
           <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Checklist</Text>
           <ScrollView>
             {this.renderView()}

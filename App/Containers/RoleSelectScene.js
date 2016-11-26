@@ -27,7 +27,7 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
-    let title = 'Some Titlte'
+    let title = 'Carl Fredricksen'
     this.props.addPatientId(this.state.text)
     this.props.changeScene({name, title}, false)
   }
