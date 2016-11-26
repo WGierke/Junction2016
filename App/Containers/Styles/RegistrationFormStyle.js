@@ -20,12 +20,11 @@ export default StyleSheet.create({
   },
   button: {
     height: 36,
-    backgroundColor: '#48BBEC',
-    borderColor: '#48BBEC',
+    borderColor: Colors.googleBlue,
     borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 10,
+    borderRadius: Metrics.buttonRadius,
+    margin: Metrics.baseMargin,
     alignSelf: 'stretch',
     justifyContent: 'center'
-  }
+  }  
 });

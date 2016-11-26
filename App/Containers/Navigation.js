@@ -61,7 +61,7 @@ class Navigation extends Component {
         return <ParentOverview navigator={navigator} {...route.passProps} />
       case Scenes.registrationForm:
         this.component = RegistrationForm
-        return <RegistrationForm navigator={navigator} {...route.passProps} />
+        return <RegistrationForm navigator={navigator} route={route} {...route.passProps} />
       case Scenes.packingList:
         this.component = PackingList
         return <PackingList navigator={navigator} {...route.passProps} />
