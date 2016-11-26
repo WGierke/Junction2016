@@ -16,7 +16,7 @@ import AdventureIntro from './AdventureIntroScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
-import {Metrics} from '../Themes'
+import {Metrics, Colors} from '../Themes'
 import {Scenes} from '../Constants/'
 
 class Navigation extends Component {
@@ -114,8 +114,9 @@ class Navigation extends Component {
         if (route.onPress) {
           return (
             <TouchableHighlight
+              underlayColor={'#425574'}
               onPress={() => route.onPress()}>
-              <Text style={{flexDirection: 'row', alignItems: 'center', marginTop: 8, marginRight: 14}}>
+              <Text style={{flexDirection: 'row', alignItems: 'center', marginTop: 8, marginRight: 14, color: 'white'}}>
                 { route.rightText || 'Right Button' }
               </Text>
             </TouchableHighlight>)

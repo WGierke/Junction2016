@@ -107,13 +107,14 @@ class SummaryListView extends React.Component {
               onClick={()=>this.onClick(data)}
               isChecked={data.checked}
               leftText={leftText}
+              leftTextStyle={{fontWeight:"100"}}
           />);
   }
 
   render() {
     return (
         <View style={[styles.checklistContainer, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
-          <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Checklist</Text>
+          <Text style={ { fontSize: 20, fontWeight: '100' } }>CHECKLIST</Text>
           <ScrollView>
             {this.renderView()}
           </ScrollView>
