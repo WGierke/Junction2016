@@ -65,7 +65,6 @@ class RoleSelectScene extends React.Component {
               </View>
             </TouchableHighlight>
           </View>
-
         </View>
       </TouchableWithoutFeedback>
     )

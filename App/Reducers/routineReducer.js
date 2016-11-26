@@ -46,7 +46,7 @@ const steps = (routineObject=mockData, action) => {
   }
 }
 
-const currentStep = (state = 2, action) => {
+const currentStep = (state = 1, action) => {
   switch(action.type){
     case 'SET_STEP':
       return action.payload.id

@@ -28,9 +28,7 @@ class TreatmentScene extends React.Component {
     //   animated: true,
     //   y: 1000
     // })}, 1000)
-    setTimeout(() => {
-      this.props.setCurrentStep(3)
-    }, 2000)
+    mockSurgery(this.props.setCurrentStep)
   }
 
   _renderRow(data, selectedId) {
@@ -139,3 +137,25 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TreatmentScene)
+
+let started = false
+function mockSurgery(setCurrentStep){
+  if(!started){
+    setTimeout(() => {
+      setCurrentStep(2)
+    }, 2000)
+
+    setTimeout(() => {
+      setCurrentStep(3)
+    }, 5000)
+
+    setTimeout(() => {
+      setCurrentStep(4)
+    }, 10000)
+
+    setTimeout(() => {
+      setCurrentStep(5)
+    }, 15000)
+    started = true
+  }
+}

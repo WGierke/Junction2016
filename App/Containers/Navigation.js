@@ -66,7 +66,7 @@ class Navigation extends Component {
         return <ParentOverview navigator={navigator} {...route.passProps} />
       case Scenes.registrationForm:
         this.component = RegistrationForm
-        return <RegistrationForm navigator={navigator} {...route.passProps} />
+        return <RegistrationForm navigator={navigator} route={route} {...route.passProps} />
       case Scenes.packingList:
         this.component = PackingList
         return <PackingList navigator={navigator} {...route.passProps} />
@@ -101,7 +101,7 @@ class Navigation extends Component {
               underlayColor='transparent'
               onPress={() => { if (index > 0) { back(navigator) } }}>
               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
-                <Icon name='ios-arrow-back' size={20} color={'#000000'} style={{marginTop: 2, paddingRight: 5, paddingLeft: 10}} />
+                <Icon name='ios-arrow-back' size={20} color={'#ffffff'} style={{marginTop: 2, paddingRight: 5, paddingLeft: 10}} />
                 <Text style={styles.topBarLeft}>Back</Text>
               </View>
             </TouchableHighlight>)
@@ -122,7 +122,7 @@ class Navigation extends Component {
       },
       Title (route, navigator, index, navState) {
         if(route && route.passProps && route.passProps.title)
-          return <Text style={{marginTop: 10, fontWeight: 'bold'}}>{route.passProps.title}</Text>
+          return <Text style={{marginTop: 10, fontWeight: 'bold', color: 'white'}}>{route.passProps.title}</Text>
       }
     }
   }

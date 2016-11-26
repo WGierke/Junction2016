@@ -9,6 +9,16 @@ const id = (state = "", action) => {
   }
 }
 
+const treatment = (state = "Knee Surgery", action) => {
+  switch (action.type) {
+    case 'SET_TREATMENT':
+      return action.payload.treatment
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
-  id
+  id,
+  treatment
 })
