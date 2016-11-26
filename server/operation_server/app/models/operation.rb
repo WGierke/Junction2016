@@ -16,6 +16,8 @@ class Operation < ActiveRecord::Base
 	validate :current_task_one_of_overall_tasks
 
 	def current_task_one_of_overall_tasks
-		task.map(&:id).include?(current_task_id)
+		unless task.map(&:id).include?(current_task_id)
+			errors.add(:current_task_id, "current_task_id must be one of the operation task IDs")
+		end
 	end
 end

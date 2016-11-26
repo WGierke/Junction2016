@@ -1,5 +1,6 @@
 class OperationsController < ApplicationController
   before_action :set_operation, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token  
 
   # GET /operations
   # GET /operations.json
@@ -48,9 +49,9 @@ class OperationsController < ApplicationController
     respond_to do |format|
       if @operation.update(operation_params)
         format.html { redirect_to @operation, notice: 'Operation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @operation }
+        format.json { render :json => @operation.to_json(:include => :task) }
       else
-        format.html { render :edit }
+        format.html { render json: @operation.errors, status: :unprocessable_entity  }
         format.json { render json: @operation.errors, status: :unprocessable_entity }
       end
     end
@@ -74,6 +75,6 @@ class OperationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def operation_params
-      params.require(:operation).permit(:name)
+      params.require(:operation).permit(:name, :current_task_id)
     end
 end
