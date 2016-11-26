@@ -8,6 +8,7 @@ import EnterID from './EnterIdScene'
 import RegistrationForm from './RegistrationFormScene'
 import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
+import Packlist from './PacklistScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -53,7 +54,7 @@ class Navigation extends Component {
         return <EnterID navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
         this.component = RoleSelect
-        return <RoleSelect navigator={navigator} {...route.passProps} />
+        return <Packlist navigator={navigator} {...route.passProps} />
       case Scenes.treatment:
         this.component = RoleSelect
         return <Treatment navigator={navigator} {...route.passProps} />
