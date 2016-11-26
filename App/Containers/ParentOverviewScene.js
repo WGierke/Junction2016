@@ -126,6 +126,7 @@ class SummaryListView extends React.Component {
 class ParentOverviewScene extends React.Component {
   componentWillMount() {
     // this.props.hideNavbar()
+    this.clickHandler = this.clickHandler.bind(this)
   }
 
   componentDidMount() {
@@ -136,7 +137,7 @@ class ParentOverviewScene extends React.Component {
   }
 
   clickHandler (name) {
-    this.props.changeScene(name, false)
+    this.props.changeScene({name, title: name==Scenes.treatment ? this.props.treatment : ''}, false)
   }
 
   render() {
@@ -155,13 +156,14 @@ ParentOverviewScene.PropTypes = {
 
 const mapStateToProps = (state) => {
   return {
+    treatment: state.patient.treatment
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeScene: (name, showNavbar = true) => {
-      dispatch(changeScene({ name }))
+    changeScene: (scene, showNavbar = true) => {
+      dispatch(changeScene(scene))
       if (!showNavbar) hideNavbar()
     },
     hideNavbar: () => {
