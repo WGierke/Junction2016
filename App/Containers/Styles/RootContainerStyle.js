@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: '#f7f7f7'
   },
   nav: {
-    backgroundColor: Colors.googleRed
+    backgroundColor: Colors.googleBlue
   },
   container: {
     flex: 1,

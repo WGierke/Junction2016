@@ -104,7 +104,7 @@ class Navigation extends Component {
       },
       Title (route, navigator, index, navState) {
         if(route && route.passProps && route.passProps.title)
-          return <Text style={{marginTop: 10}}>{route.passProps.title}</Text>
+          return <Text style={{marginTop: 10, fontWeight: 'bold'}}>{route.passProps.title}</Text>
       }
     }
   }
@@ -159,9 +159,9 @@ export default connect(mapStateToProps, mapStateToDispatch)(Navigation)
 
 
 /**
- * 
+ *
   }
- * 
- * 
- * 
+ *
+ *
+ *
  */
