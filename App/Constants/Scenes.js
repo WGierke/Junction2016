@@ -3,7 +3,9 @@ const scenes = {
   enterId: 'EnterIDScene',
   roleSelect: 'RoleSelectScene',
   treatment: 'TreatmentScene',
-  parentOverview: 'ParentOverview',
+  parentOverview: 'ParentOverviewScene',
+  packingList: 'PackingList',
+  registrationForm: 'RegistrationForm'
 }
 
 export default scenes

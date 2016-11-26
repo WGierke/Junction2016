@@ -15,7 +15,7 @@ import { Metrics } from '../Themes'
 
 import Toast from 'react-native-easy-toast'
 
-class Packinglist extends Component {
+class PackingList extends Component {
     constructor(props) {
         super(props);
     }
@@ -88,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Packinglist)
+export default connect(mapStateToProps, mapDispatchToProps)(PackingList)
