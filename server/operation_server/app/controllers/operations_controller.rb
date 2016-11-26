@@ -67,22 +67,22 @@ class OperationsController < ApplicationController
     end
   end
 
-  def send
-    app = RailsPushNotifications::APNSApp.new
-    app.apns_dev_cert = File.read('{Rails.root}/public/Certificate-iOS.pem')
-    app.apns_prod_cert = File.read('{Rails.root}/public/Certificate-iOS.pem')
-    app.sandbox_mode = true
-    app.save
+  # def send
+  #   app = RailsPushNotifications::APNSApp.new
+  #   app.apns_dev_cert = File.read('{Rails.root}/public/Certificate-iOS.pem')
+  #   app.apns_prod_cert = File.read('{Rails.root}/public/Certificate-iOS.pem')
+  #   app.sandbox_mode = true
+  #   app.save
 
-    app = <Your Apple app>
-    notification = app.notifications.create(
-      destinations: [
-        'Your first destination token',
-        'Your second destination token'
-      ],
-      data: { aps: { alert: 'Hello APNS World!', sound: 'true', badge: 1 } }
-    )
-  end
+  #   app = <Your Apple app>
+  #   notification = app.notifications.create(
+  #     destinations: [
+  #       'Your first destination token',
+  #       'Your second destination token'
+  #     ],
+  #     data: { aps: { alert: 'Hello APNS World!', sound: 'true', badge: 1 } }
+  #   )
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
