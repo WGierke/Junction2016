@@ -7,7 +7,8 @@ export default StyleSheet.create({
     backgroundColor: '#f7f7f7'
   },
   nav: {
-    backgroundColor: Colors.lightGray
+    // backgroundColor: Colors.lightGray
+    backgroundColor: '#425574'
   },
   container: {
     flex: 1,
