@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Operations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @operations.each do |operation| %>
+      <tr>
+        <td><%= operation.name %></td>
+        <td><%= link_to 'Show', operation %></td>
+        <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
+        <td><%= link_to 'Destroy', operation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Operation', new_operation_path %>
