@@ -8,9 +8,6 @@ export const addDevice = (device) => ({
   payload: {device}
 })
 
-const scanStart = () => ({ type: 'SCAN_START' })
-const scanStop = () => ({ type: 'SCAN_STOP' })
-
 export const scan = () => (dispatch) => {
   // dispatch(scanStart())
   // return bluetooth.scanDevices()

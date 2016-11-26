@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { View, Text, ListView, Image, ActivityIndicator, TouchableHighlight } from 'react-native'
+import { View, Text, ListView, ActivityIndicator, TouchableHighlight } from 'react-native'
 
 import { connect } from 'react-redux'
 import { scan, changeScene } from '../Reducers/action'
@@ -11,7 +11,7 @@ import AlertMessage from '../Components/AlertMessage'
 
 // Styles
 import styles from './Styles/ConnectScreenStyle'
-import { Metrics, Images } from '../Themes'
+import { Metrics } from '../Themes'
 import {Scenes} from '../Constants'
 
 class ConnectScreen extends React.Component {
@@ -75,8 +75,8 @@ class ConnectScreen extends React.Component {
     return (
       <View style={styles.view}>
         <View style={styles.imageWrapper}>
-        <TouchableHighlight onPress={this.clickHandler}>
-          <Text>Start</Text>
+          <TouchableHighlight onPress={this.clickHandler}>
+            <Text>Start</Text>
           </TouchableHighlight>
         </View>
 

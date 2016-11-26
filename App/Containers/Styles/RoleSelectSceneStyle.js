@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native'
 import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
 
 export default {
@@ -23,10 +22,10 @@ export default {
     justifyContent: 'flex-start'
   },
   green: {
-    backgroundColor: Colors.googleGreen,
+    backgroundColor: Colors.googleGreen
   },
   blue: {
-    backgroundColor: Colors.googleBlue,
+    backgroundColor: Colors.googleBlue
   },
   content: {
     color: Colors.googleBlue,

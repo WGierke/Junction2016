@@ -1,29 +1,20 @@
 import React, { PropTypes } from 'react'
-import { View, Text, ListView, Image, ActivityIndicator, TouchableHighlight } from 'react-native'
+import { View, Text, TouchableHighlight } from 'react-native'
 
 import { connect } from 'react-redux'
 import { changeScene } from '../Reducers/action'
 
-import Icon from 'react-native-vector-icons/Ionicons'
-
-
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
-import { Metrics, Images } from '../Themes'
 import { Scenes } from '../Constants'
 
 class RoleSelectScene extends React.Component {
-
-  constructor (props) {
-    super(props)
-  }
-
   componentDidMount () {
     this.clickHandler = this.clickHandler.bind(this)
   }
 
   clickHandler (name) {
-    console.log("############### ", name)
+    console.log('############### ', name)
     this.props.changeScene(name)
   }
 

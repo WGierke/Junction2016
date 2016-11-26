@@ -23,11 +23,11 @@ class Navigation extends Component {
   renderScene (route, navigator) {
     switch (this.props.scene) {
       case Scenes.connect:
-        return <Connect navigator={navigator}  {...route.passProps} />
+        return <Connect navigator={navigator} {...route.passProps} />
       case Scenes.enterId:
-        return <EnterID navigator={navigator}  {...route.passProps} />
+        return <EnterID navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
-        return <RoleSelect navigator={navigator}  {...route.passProps} />
+        return <RoleSelect navigator={navigator} {...route.passProps} />
       default:
         return <route.component navigator={navigator} route={route} {...route.passProps} />
     }
@@ -69,7 +69,7 @@ class Navigation extends Component {
 
   // applyStyle() {
   //   if(this.scene)
-  //   return 
+  //   return
   // }
 
   render () {

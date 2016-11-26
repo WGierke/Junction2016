@@ -87,7 +87,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.ilockit"
+        applicationId "com.hospitalmanager"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -126,11 +126,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-vector-icons')
-    compile project(':react-native-maps')
-    compile project(':react-native-i18n')
-    compile project(':react-native-device-info')
-    compile project(':react-native-config')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
