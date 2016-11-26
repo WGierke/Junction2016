@@ -50,7 +50,8 @@ export default {
   item: {
       flexDirection: 'row',
       alignItems:'center',
-      justifyContent:'center'
+      justifyContent:'center',
+      
   },
   line: {
       flex: 1,

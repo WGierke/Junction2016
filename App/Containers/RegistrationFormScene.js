@@ -26,14 +26,14 @@ class RegistrationFormScene extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
+    this.props.route.rightText = 'Save'
     this.props.route.onPress = () => {Alert.alert('Fooo')}
   }
 
 
   render() {
     return (
-      <Form style={{flex: 1}}>
       <ScrollView keyboardShouldPersistTaps={true} style={{paddingLeft:10,paddingRight:10, height:200}}>
       <Form
         ref='registrationForm'
@@ -60,12 +60,6 @@ class RegistrationFormScene extends React.Component {
           date={new Date('7/4/2008')} />
       </Form>
       </ScrollView>
-      <TouchableHighlight underlayColor={Colors.background} style={styles.button} onPress={() => Alert.alert('Fo')}>
-        <View>
-          <Text style={styles.content}>Save</Text>
-        </View>
-      </TouchableHighlight>
-      </Form>
     );
   }
 
