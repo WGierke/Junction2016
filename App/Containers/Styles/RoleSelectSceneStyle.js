@@ -15,7 +15,7 @@ export default {
     textAlign: 'center'
   },
   headIcon: {
-    fontSize: 120,
+    fontSize: 100,
     textAlign: 'center',
     color: Colors.googleRed,
     marginBottom: 80,

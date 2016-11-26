@@ -23,14 +23,14 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		AA426E7F1DE8FC250077EEF6 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E771DE8FC250077EEF6 /* Entypo.ttf */; };
-		AA426E801DE8FC250077EEF6 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E781DE8FC250077EEF6 /* EvilIcons.ttf */; };
-		AA426E811DE8FC250077EEF6 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E791DE8FC250077EEF6 /* FontAwesome.ttf */; };
-		AA426E821DE8FC250077EEF6 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E7A1DE8FC250077EEF6 /* Foundation.ttf */; };
-		AA426E831DE8FC250077EEF6 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E7B1DE8FC250077EEF6 /* Ionicons.ttf */; };
 		AA426E841DE8FC250077EEF6 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E7C1DE8FC250077EEF6 /* MaterialIcons.ttf */; };
-		AA426E851DE8FC250077EEF6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E7D1DE8FC250077EEF6 /* Octicons.ttf */; };
-		AA426E861DE8FC250077EEF6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA426E7E1DE8FC250077EEF6 /* Zocial.ttf */; };
+		F7386E791DE98DDC0024DA78 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E711DE98DDC0024DA78 /* Entypo.ttf */; };
+		F7386E7A1DE98DDC0024DA78 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E721DE98DDC0024DA78 /* EvilIcons.ttf */; };
+		F7386E7B1DE98DDC0024DA78 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E731DE98DDC0024DA78 /* FontAwesome.ttf */; };
+		F7386E7C1DE98DDC0024DA78 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E741DE98DDC0024DA78 /* Foundation.ttf */; };
+		F7386E7D1DE98DDC0024DA78 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E751DE98DDC0024DA78 /* Ionicons.ttf */; };
+		F7386E7F1DE98DDC0024DA78 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E771DE98DDC0024DA78 /* Octicons.ttf */; };
+		F7386E801DE98DDC0024DA78 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7386E781DE98DDC0024DA78 /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +143,14 @@
 		AA426E7C1DE8FC250077EEF6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		AA426E7D1DE8FC250077EEF6 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		AA426E7E1DE8FC250077EEF6 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		F7386E711DE98DDC0024DA78 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		F7386E721DE98DDC0024DA78 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		F7386E731DE98DDC0024DA78 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		F7386E741DE98DDC0024DA78 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		F7386E751DE98DDC0024DA78 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		F7386E761DE98DDC0024DA78 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		F7386E771DE98DDC0024DA78 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		F7386E781DE98DDC0024DA78 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +313,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F7386E701DE98DDC0024DA78 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* HospitalManager */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* HospitalManagerTests */,
@@ -335,6 +344,22 @@
 				AA426E7C1DE8FC250077EEF6 /* MaterialIcons.ttf */,
 				AA426E7D1DE8FC250077EEF6 /* Octicons.ttf */,
 				AA426E7E1DE8FC250077EEF6 /* Zocial.ttf */,
+			);
+			name = Fonts;
+			path = "../node_modules/react-native-vector-icons/Fonts";
+			sourceTree = "<group>";
+		};
+		F7386E701DE98DDC0024DA78 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7386E711DE98DDC0024DA78 /* Entypo.ttf */,
+				F7386E721DE98DDC0024DA78 /* EvilIcons.ttf */,
+				F7386E731DE98DDC0024DA78 /* FontAwesome.ttf */,
+				F7386E741DE98DDC0024DA78 /* Foundation.ttf */,
+				F7386E751DE98DDC0024DA78 /* Ionicons.ttf */,
+				F7386E761DE98DDC0024DA78 /* MaterialIcons.ttf */,
+				F7386E771DE98DDC0024DA78 /* Octicons.ttf */,
+				F7386E781DE98DDC0024DA78 /* Zocial.ttf */,
 			);
 			name = Fonts;
 			path = "../node_modules/react-native-vector-icons/Fonts";
@@ -385,7 +410,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -541,14 +566,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA426E841DE8FC250077EEF6 /* MaterialIcons.ttf in Resources */,
-				AA426E851DE8FC250077EEF6 /* Octicons.ttf in Resources */,
-				AA426E861DE8FC250077EEF6 /* Zocial.ttf in Resources */,
+				F7386E7C1DE98DDC0024DA78 /* Foundation.ttf in Resources */,
+				F7386E7B1DE98DDC0024DA78 /* FontAwesome.ttf in Resources */,
+				F7386E7A1DE98DDC0024DA78 /* EvilIcons.ttf in Resources */,
+				F7386E801DE98DDC0024DA78 /* Zocial.ttf in Resources */,
+				F7386E791DE98DDC0024DA78 /* Entypo.ttf in Resources */,
+				F7386E7F1DE98DDC0024DA78 /* Octicons.ttf in Resources */,
+				F7386E7D1DE98DDC0024DA78 /* Ionicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				AA426E811DE8FC250077EEF6 /* FontAwesome.ttf in Resources */,
-				AA426E801DE8FC250077EEF6 /* EvilIcons.ttf in Resources */,
-				AA426E831DE8FC250077EEF6 /* Ionicons.ttf in Resources */,
-				AA426E821DE8FC250077EEF6 /* Foundation.ttf in Resources */,
-				AA426E7F1DE8FC250077EEF6 /* Entypo.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +649,7 @@
 				INFOPLIST_FILE = HospitalManagerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HospitalManager.app/HospitalManager";
 			};
@@ -637,6 +663,7 @@
 				INFOPLIST_FILE = HospitalManagerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HospitalManager.app/HospitalManager";
 			};
@@ -660,6 +687,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HospitalManager;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -682,6 +710,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HospitalManager;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -700,15 +729,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -746,8 +779,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -755,6 +790,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

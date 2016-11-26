@@ -5,8 +5,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
+import RegistrationForm from './RegistrationFormScene'
 import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
+import ParentOverview from './ParentOverviewScene'
+import Packlist from './PacklistScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -28,17 +31,18 @@ class Navigation extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log("Receives new Props: ", nextProps.scene)
+    console.log("Receives new Props: ", nextProps.scene)
     this.navigator.push({
-        component: nextProps.scene.name,
+        component: nextProps.scene,
         passProps: {
-          title: nextProps.scene.title ? nextProps.scene.title : ''
+          // title: nextProps.scene.title ? nextProps.scene.title : ''
+          ...nextProps.props
         }
       })
   }
 
   renderScene (route, navigator) {
-    // console.log("----------------- RENDER SCENE --------------------------", route.component)
+    console.log("----------------- RENDER SCENE --------------------------", route.component)
     switch (route.component) {
       case Scenes.connect:
         return <Connect navigator={navigator} {...route.passProps} />
@@ -48,6 +52,8 @@ class Navigation extends Component {
         return <RoleSelect navigator={navigator} {...route.passProps} />
       case Scenes.treatment:
         return <Treatment navigator={navigator} {...route.passProps} />
+      case Scenes.parentOverview:
+        return <ParentOverview navigator={navigator} {...route.passProps} />
       default:
         return <RoleSelect navigator={navigator} {...route.passProps} />
     }
@@ -115,7 +121,7 @@ class Navigation extends Component {
         configureScene={this.configureScene}
         sceneStyle={sceneStyle()}
         navigationBar={this.renderNavBar()}
-        initialRouteStack={[{ component: RoleSelect }]}
+        initialRouteStack={[{ component: Scenes.roleSelect }]}
         renderScene={this.renderScene}
         ref={(nav) => this.navigator = nav}
       />
@@ -133,6 +139,7 @@ const mapStateToDispatch = dispatch => ({
 
 const mapStateToProps = (state, _) => ({
   scene: state.navigation.scene,
+  props: state.navigation.props,
   showNavbar: state.navigation.showNavbar
 })
 

@@ -29,11 +29,14 @@
     "ramda": "^0.22.1",
     "react": "~15.3.0",
     "react-native": "^0.34.1",
+    "react-native-accordion": "^1.0.1",
     "react-native-animatable": "^0.6.0",
     "react-native-ble-manager": "^2.3.0",
+    "react-native-check-box": "^1.0.2",
     "react-native-config": "^0.1.0",
     "react-native-device-info": "^0.9.5",
     "react-native-drawer": "^2.3.0",
+    "react-native-easy-toast": "^1.0.3",
     "react-native-i18n": "^0.1.1",
     "react-native-maps": "^0.8.2",
     "react-native-router-flux": "^3.35.0",
@@ -45,7 +48,8 @@
     "redux-saga": "^0.11.1",
     "redux-thunk": "^2.1.0",
     "reduxsauce": "0.2.0",
-    "seamless-immutable": "^6.1.0"
+    "seamless-immutable": "^6.1.0",
+    "tcomb-form-native": "^0.6.1"
   },
   "devDependencies": {
     "ava": "^0.16.0",

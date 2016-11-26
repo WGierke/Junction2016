@@ -27,8 +27,13 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
+    let title = 'Some Titlte'
     this.props.addPatientId(this.state.text)
-    this.props.changeScene({name})
+    this.props.changeScene({name, title}, false)
+  }
+
+  renderNavbar() {
+    return false
   }
 
   render() {
@@ -61,7 +66,7 @@ class RoleSelectScene extends React.Component {
                 <Text style={styles.content}>Child</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.enterId)}>
+            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.parentOverview)}>
               <View>
                 <Text style={styles.content}>Parent</Text>
               </View>
@@ -85,8 +90,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeScene: (name, showNavbar=true) => {
-      dispatch(changeScene({name, showNavbar}))
+    changeScene: (props, showNavbar=true) => {
+      dispatch(changeScene(props))
+      if (!showNavbar) hideNavbar()
     },
     hideNavbar: () => {
       dispatch(hideNavbar())
