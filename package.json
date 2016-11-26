@@ -33,6 +33,7 @@
     "react-native-animatable": "^0.6.0",
     "react-native-ble-manager": "^2.3.0",
     "react-native-check-box": "^1.0.2",
+    "react-native-collapsible": "^0.7.0",
     "react-native-config": "^0.1.0",
     "react-native-device-info": "^0.9.5",
     "react-native-drawer": "^2.3.0",

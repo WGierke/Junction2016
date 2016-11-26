@@ -49,10 +49,15 @@ export default {
   },
   item: {
       flexDirection: 'row',
+      alignItems:'center',
+      justifyContent:'center'
   },
   line: {
       flex: 1,
       height: 0.3,
       backgroundColor: 'darkgray',
+  },
+  ListIcons: {
+    fontSize: 25
   }
 }

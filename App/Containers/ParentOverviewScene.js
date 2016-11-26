@@ -40,19 +40,19 @@ class Grid extends React.Component {
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
-            <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} />
+            <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleRed} />
           </View>
         </TouchableHighlight>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.packingList)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
-            <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} />
+            <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleBlue} />
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.registrationForm)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
-            <IconCell iconName='ios-clipboard' description='Patient Data' backgroundColor={Colors.googleYellow} />
+            <IconCell iconName='ios-clipboard-outline' description='Patient Data' backgroundColor={Colors.googleYellow} />
           </View>
         </TouchableHighlight>
       </View>
@@ -90,7 +90,8 @@ class SummaryListView extends React.Component {
         views.push(
             <View key={i}>
               <View style={styles.item}>
-                  {this.renderCheckBox(this.state.dataArray[i])}
+                <Icon name={this.state.dataArray[i].icon} style={styles.ListIcons} />
+                {this.renderCheckBox(this.state.dataArray[i])}
               </View>
             </View>
         )

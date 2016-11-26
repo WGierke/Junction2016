@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { View, Navigator, TouchableHighlight, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
+import { popScene } from '../Reducers/action'
+
 import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
 import RegistrationForm from './RegistrationFormScene'
@@ -20,10 +22,10 @@ class Navigation extends Component {
   componentWillMount () {
     this.renderScene = this.renderScene.bind(this)
     this.renderNavBar = this.renderNavBar.bind(this)
+    this.navigationRouteMapper = this.navigationRouteMapper.bind(this)
     this.component = RoleSelect
     // this.applyStyle = this.applyStyle.bind(this)
 
-    console.log("Component: ", this.props.scene)
     this.component = RoleSelect
   }
 
@@ -31,8 +33,8 @@ class Navigation extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("Receives new Props: ", nextProps.scene)
-    if(nextProps.scene != this.props.scene){
+    console.log("Receives new Props: ", nextProps.scene, this.props.lastAction)
+    if(nextProps.scene != this.props.scene && nextProps.lastAction != 'POP_SCENE'){
       if(this.props.scene == Scenes.roleSelect)
         this.navigator.pop()
 
@@ -43,6 +45,9 @@ class Navigation extends Component {
             ...nextProps.props
           }
         })
+    }else if(nextProps.lastAction == 'POP_SCENE'){
+      console.log("++++++++++++++++++++++++++++ POP in Navigation")
+      this.navigator.pop()
     }
   }
 
@@ -71,17 +76,30 @@ class Navigation extends Component {
   }
 
   configureScene(route, routeStack) {
-    return Navigator.SceneConfigs.HorizontalSwipeJump
+    const NoBackSwipe ={
+      ...Navigator.SceneConfigs.HorizontalSwipeJump,
+        gestures: {
+          pop: {},
+        },
+    };
+    return NoBackSwipe
+    // return Navigator.SceneConfigs.HorizontalSwipeJump
   }
 
   navigationRouteMapper () {
+    let back = (navigator) => {
+      let stack = navigator.getCurrentRoutes()
+      let newScene = stack[stack.length-2]
+      console.log("Last Scene: ", newScene)
+      this.props.popScene(newScene.component)
+    }
     return {
       LeftButton (route, navigator, index, navState) {
         if (index > 1) {
           return (
             <TouchableHighlight
               underlayColor='transparent'
-              onPress={() => { if (index > 0) { navigator.pop() } }}>
+              onPress={() => { if (index > 0) { back(navigator) } }}>
               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
                 <Icon name='ios-arrow-back' size={20} color={'#000000'} style={{marginTop: 2, paddingRight: 5, paddingLeft: 10}} />
                 <Text style={styles.topBarLeft}>Back</Text>
@@ -104,7 +122,7 @@ class Navigation extends Component {
       },
       Title (route, navigator, index, navState) {
         if(route && route.passProps && route.passProps.title)
-          return <Text style={{marginTop: 10}}>{route.passProps.title}</Text>
+          return <Text style={{marginTop: 10, fontWeight: 'bold'}}>{route.passProps.title}</Text>
       }
     }
   }
@@ -146,12 +164,14 @@ Navigation.propTypes = {
 
 const mapStateToDispatch = dispatch => ({
   // startup: () => dispatch(StartupActions.startup())
+  popScene: (name) => dispatch( popScene({name}) )
 })
 
 const mapStateToProps = (state, _) => ({
   scene: state.navigation.scene,
   props: state.navigation.props,
-  showNavbar: state.navigation.showNavbar
+  showNavbar: state.navigation.showNavbar,
+  lastAction: state.lastAction.type,
 })
 
 export default connect(mapStateToProps, mapStateToDispatch)(Navigation)
@@ -159,9 +179,9 @@ export default connect(mapStateToProps, mapStateToDispatch)(Navigation)
 
 
 /**
- * 
+ *
   }
- * 
- * 
- * 
+ *
+ *
+ *
  */
