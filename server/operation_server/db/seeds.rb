@@ -9,4 +9,4 @@ Task.create!(name:"Preparation", description: "We prepare the operating room as 
 Task.create!(name:"Anaesthesia", description: "We sedate the patient to increase his feeling of well-being during the operation process.")
 Task.create!(name:"Operation", description: "We perform the actual medical surgery.")
 Task.create!(name:"Finished", description: "The operation is finished. The patient is now allowed to wake up slowly from the surgery.")
-Operation.create!(name: "Knee Fixing", task: Task.all, current_task_id: Task.first.id
+Operation.create!(name: "Knee Fixing", task: Task.all, current_task_id: Task.first.id)
