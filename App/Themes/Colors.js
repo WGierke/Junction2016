@@ -23,6 +23,7 @@ const colors = {
   googleGreen: '#0F9D58',
   googleBlue: '#4285F4',
   googleRed: '#DD4b39',
+  googleYellow: '#EEB211',
 }
 
 export default colors

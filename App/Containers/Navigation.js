@@ -7,6 +7,7 @@ import Connect from './ConnectScreen'
 import EnterID from './EnterIdScene'
 import RoleSelect from './RoleSelectScene'
 import Treatment from './TreatmentScene'
+import ParentOverview from './ParentOverviewScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -56,6 +57,9 @@ class Navigation extends Component {
       case Scenes.treatment:
         this.component = RoleSelect
         return <Treatment navigator={navigator} {...route.passProps} />
+      case Scenes.parentOverview:
+        this.component = ParentOverview
+        return <ParentOverview navigator={navigator} {...route.passProps} />
       default:
         return <route.component navigator={navigator} route={route} {...route.passProps} />
     }
@@ -64,6 +68,7 @@ class Navigation extends Component {
   navigationRouteMapper () {
     return {
       LeftButton (route, navigator, index, navState) {
+        return null
         if (index > 0) {
           return (
             <TouchableHighlight

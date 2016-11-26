@@ -10,18 +10,6 @@ import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
 import { Metrics } from '../Themes'
 
-class UselessTextInput extends React.Component {
-  render() {
-    return (
-      <TextInput
-        {...this.props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
-        editable = {true}
-        maxLength = {40}
-      />
-    );
-  }
-}
-
 class RoleSelectScene extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +27,7 @@ class RoleSelectScene extends React.Component {
 
   clickHandler (name) {
     this.props.addPatientId(this.state.text)
-    this.props.changeScene(name)
+    this.props.changeScene(name, false)
   }
 
   renderNavbar() {
@@ -76,7 +64,7 @@ class RoleSelectScene extends React.Component {
                 <Text style={styles.content}>Child</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.enterId)}>
+            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.parentOverview)}>
               <View>
                 <Text style={styles.content}>Parent</Text>
               </View>
@@ -101,7 +89,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeScene: (name, showNavbar=true) => {
-      dispatch(changeScene({name, showNavbar}))
+      dispatch(changeScene({name}))
+      if (!showNavbar) hideNavbar()
     },
     hideNavbar: () => {
       dispatch(hideNavbar())
