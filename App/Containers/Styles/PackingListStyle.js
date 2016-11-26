@@ -22,5 +22,18 @@ export default StyleSheet.create({
   ListIcons: {
     fontSize: 25,
     color: Colors.googleBlue,
-  }
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: '#F6F6F6',
+  },
+  thumb: {
+    width: 64,
+    height: 64,
+  },
+  text: {
+    flex: 1,
+  },
 });

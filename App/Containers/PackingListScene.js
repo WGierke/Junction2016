@@ -38,6 +38,15 @@ class PackingList extends Component {
         this.toast.show(msg+data.name);
     }
 
+    renderRow(data) {
+        return (
+          <View style={{flexDirection: 'row'}}>
+            <Text>{'\u2022'}</Text>
+            <Text style={{flex: 1, paddingLeft: 8, paddingBottom: 5}}>{data}</Text>
+          </View>
+        );
+      }
+
     renderView() {
         if (!this.state.dataArray || this.state.dataArray.length === 0) return;
         var len = this.state.dataArray.length;
@@ -54,8 +63,9 @@ class PackingList extends Component {
                   {this.renderCheckBox(this.state.dataArray[i])}
                 </View>
                 <ListView
+                  style={{marginLeft: 20}}
                   dataSource={source}
-                  renderRow={(rowData) => <Text>{rowData}</Text>}
+                  renderRow={this.renderRow}
                 />
               </View>
             )
