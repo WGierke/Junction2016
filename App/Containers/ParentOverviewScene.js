@@ -91,10 +91,11 @@ class SummaryListView extends React.Component {
   render() {
     return (
         <View style={[styles.flowWrapper, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
-            <ScrollView>
-                {this.renderView()}
-            </ScrollView>
-            <Toast ref={e=>{this.toast=e}}/>
+          <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Checklist</Text>
+          <ScrollView>
+            {this.renderView()}
+          </ScrollView>
+          <Toast ref={e=>{this.toast=e}}/>
         </View>
     )
   }
