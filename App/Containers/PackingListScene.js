@@ -40,9 +40,9 @@ class PackingList extends Component {
         var views = [];
         for (var i = 0; i < len; i ++) {
           views.push(
-              <View style={ {justifyContent: 'center', marginRight: Metrics.baseMargin, flex: 1} } key={i}>
+              <View key={i}>
                 <View style={styles.item}>
-                  <Icon name={'ios-heart'} style={styles.headIcon} />
+                  <Icon name={this.state.dataArray[i].icon} style={styles.ListIcons} />
                   {this.renderCheckBox(this.state.dataArray[i])}
                 </View>
               </View>
