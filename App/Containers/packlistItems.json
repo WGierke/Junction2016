@@ -1,0 +1,38 @@
+[
+  {
+    "path": "Insurance Card",
+    "name": "Insurance Card",
+    "details": "Insurance Card, Family Doctor Contact Information",
+    "checked": false
+  },
+  {
+    "path": "Clothing",
+    "name": "Clothing",
+    "details": "T-Shirts, Underwear, Socks, Sweatpants",
+    "checked": false
+  },
+  {
+    "path": "Toiletries",
+    "name": "Toiletries",
+    "details": "Towel, Toothbrush, Toothpaste, Face Cloth",
+    "checked": false
+  },
+  {
+    "path": "Bathrobe, Flip-Flops",
+    "name": "Bathrobe, Flip-Flops",
+    "details": "",
+    "checked": false
+  },
+  {
+    "path": "Food",
+    "name": "Food",
+    "details": "Instant Meals, Soups, Sweets",
+    "checked": false
+  },
+  {
+    "path": "Entertainment",
+    "name": "Entertainment",
+    "details": "Books, Card and Board Games Pencils, Electronices with charging cable",
+    "checked": false
+  }
+]
