@@ -1,7 +1,8 @@
-export const changeScene = (name) => ({
+export const changeScene = (scene) => ({
   type: 'CHANGE_SCENE',
-  payload: {name}
+  payload: scene
 })
+export const hideNavbar = () => ({type: 'HIDE_NAVBAR', payload:{} })
 
 export const addDevice = (device) => ({
   type: 'ADD_DEVICE',

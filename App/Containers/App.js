@@ -10,7 +10,6 @@ import '../I18n/I18n' // keep before root container
 import RootContainer from './RootContainer'
 import applyConfigSettings from '../Config'
 import reducers from '../Reducers/reducers.js'
-import {setup} from '../Network/bluetooth.js'
 
 // Apply config overrides
 applyConfigSettings()
@@ -34,7 +33,6 @@ function makeStore (initialState, middlewares) {
 }
 
 const store = makeStore({}, [thunk])
-setup(store.dispatch)
 
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js

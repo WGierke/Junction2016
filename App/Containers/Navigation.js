@@ -9,24 +9,55 @@ import RoleSelect from './RoleSelectScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
+import {Metrics} from '../Themes'
 import {Scenes} from '../Constants/'
 
 class Navigation extends Component {
   componentWillMount () {
     this.renderScene = this.renderScene.bind(this)
+    this.renderNavBar = this.renderNavBar.bind(this)
+    this.component = RoleSelect
     // this.applyStyle = this.applyStyle.bind(this)
+
+    console.log("Component: ", this.props.scene)
+    this.component = RoleSelect
   }
 
   componentDidMount () {
+    // Navigator.push({
+    //   component: EnterID,
+    //   passProps: {
+    //     // name: name
+    //   }
+    // })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("New Property: " + nextProps.scene)
+    // this.
+    if(this.navigator){
+      console.log("Navigator has instance #####################")
+      this.navigator.push({
+      component: EnterID,
+      passProps: {
+        // name: name
+      }
+    })
+    }
   }
 
   renderScene (route, navigator) {
+    console.log("Render Scene +++++++++++++++++++++++++++++++")
+    this.navigator = navigator
     switch (this.props.scene) {
       case Scenes.connect:
+        this.component = Connect
         return <Connect navigator={navigator} {...route.passProps} />
       case Scenes.enterId:
+        this.component = EnterID
         return <EnterID navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
+        this.component = RoleSelect
         return <RoleSelect navigator={navigator} {...route.passProps} />
       default:
         return <route.component navigator={navigator} route={route} {...route.passProps} />
@@ -67,21 +98,28 @@ class Navigation extends Component {
     }
   }
 
-  // applyStyle() {
-  //   if(this.scene)
-  //   return
-  // }
+  renderNavBar() {
+    if(this.props.showNavbar)
+      return <Navigator.NavigationBar
+              style={styles.nav}
+              routeMapper={this.navigationRouteMapper()} />
+  }
+
+  configureScene(route, routeStack) {
+    return Navigator.SceneConfigs.PushFromRight 
+  }
 
   render () {
+    let sceneStyle = () => {
+      return {
+        paddingTop: Metrics.navBarHeight
+      }
+    }
     return (
       <Navigator
-        // navigationBar={
-        //   <Navigator.NavigationBar
-        //     style={styles.nav}
-        //     title='Navigatopn'
-        //     routeMapper={this.navigationRouteMapper()} />
-        //   }
-        sceneStyle={{paddingTop: 64}}
+        configureScene={this.configureScene}
+        navigationBar={this.renderNavBar()}
+        sceneStyle={sceneStyle()}
         initialRoute={{ component: this.props.scene }}
         renderScene={this.renderScene}
       />
@@ -98,7 +136,8 @@ const mapStateToDispatch = dispatch => ({
 })
 
 const mapStateToProps = (state, _) => ({
-  scene: state.navigation.scene
+  scene: state.navigation.scene,
+  showNavbar: state.navigation.showNavbar
 })
 
 export default connect(mapStateToProps, mapStateToDispatch)(Navigation)

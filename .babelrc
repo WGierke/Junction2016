@@ -2,7 +2,7 @@
   "presets": [ "react-native" ],
   "env": {
     "development": {
-      "sourceMaps": "inline"
+      "sourceMaps": "true"
     }
   }
 }

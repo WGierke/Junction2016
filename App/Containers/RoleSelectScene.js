@@ -2,13 +2,18 @@ import React, { PropTypes } from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
 
 import { connect } from 'react-redux'
-import { changeScene } from '../Reducers/action'
+import { changeScene, hideNavbar } from '../Reducers/action'
 
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 class RoleSelectScene extends React.Component {
+  componentWillMount () {
+    this.props.hideNavbar()
+  }
+
   componentDidMount () {
     this.clickHandler = this.clickHandler.bind(this)
   }
@@ -16,6 +21,10 @@ class RoleSelectScene extends React.Component {
   clickHandler (name) {
     console.log('############### ', name)
     this.props.changeScene(name)
+  }
+
+  renderNavbar() {
+    return false
   }
 
   render () {
@@ -30,7 +39,6 @@ class RoleSelectScene extends React.Component {
       <View>
         <Icon
             name={'ios-heart'}
-            size={Metrics.icons.xl}
             style={styles.headIcon}
           />
         <View style={styles.flowWrapper}>        
@@ -62,8 +70,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeScene: (name) => {
-      dispatch(changeScene(name))
+    changeScene: (name, showNavbar=true) => {
+      dispatch(changeScene({name, showNavbar}))
+    },
+    hideNavbar: () => {
+      dispatch(hideNavbar())
     }
   }
 }

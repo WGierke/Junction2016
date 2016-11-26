@@ -10,6 +10,18 @@ const scene = (state = Scenes.roleSelect, action) => {
   }
 }
 
+const showNavbar = (state = true, action) => {
+  switch (action.type) {
+    case 'CHANGE_SCENE':
+      return action.payload.showNavbar ? action.payload.showNavbar : true
+    case 'HIDE_NAVBAR':
+      return false
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
-  scene
+  scene,
+  showNavbar
 })
