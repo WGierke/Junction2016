@@ -3,6 +3,7 @@ export const changeScene = (scene) => ({
   payload: scene
 })
 export const hideNavbar = () => ({type: 'HIDE_NAVBAR', payload:{} })
+export const setCurrentStep = (id) => ({type: 'SET_STEP', payload:{id} })
 
 export const addDevice = (device) => ({
   type: 'ADD_DEVICE',
