@@ -40,14 +40,14 @@ class Grid extends React.Component {
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
-            <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleBlue} />
+            <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleRed} />
           </View>
         </TouchableHighlight>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.packingList)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
-            <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleRed} />
+            <IconCell iconName='ios-medkit-outline' description='Packing list' backgroundColor={Colors.googleBlue} />
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.registrationForm)} underlayColor={Colors.background} style={styles.matrixInner}>

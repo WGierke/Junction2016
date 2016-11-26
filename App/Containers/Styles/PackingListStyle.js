@@ -21,6 +21,6 @@ export default StyleSheet.create({
   },
   ListIcons: {
     fontSize: 25,
-    color: Colors.googleRed,
+    color: Colors.googleBlue,
   }
 });
