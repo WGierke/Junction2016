@@ -1,16 +1,34 @@
 import React, { PropTypes } from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import { View, Text, TouchableHighlight, TextInput, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import { connect } from 'react-redux'
-import { changeScene, hideNavbar } from '../Reducers/action'
+import { changeScene, hideNavbar, addPatientId } from '../Reducers/action'
 
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
 import { Metrics } from '../Themes'
 
+class UselessTextInput extends React.Component {
+  render() {
+    return (
+      <TextInput
+        {...this.props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
+        editable = {true}
+        maxLength = {40}
+      />
+    );
+  }
+}
+
 class RoleSelectScene extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'Enter patient ID',
+    };
+  }
   componentWillMount () {
     this.props.hideNavbar()
   }
@@ -20,6 +38,7 @@ class RoleSelectScene extends React.Component {
   }
 
   clickHandler (name) {
+    this.props.addPatientId(this.state.text)
     this.props.changeScene(name)
   }
 
@@ -27,7 +46,8 @@ class RoleSelectScene extends React.Component {
     return false
   }
 
-  render () {
+  render() {
+    const dismissKeyboard = require('dismissKeyboard')
     let viewStyles = (color) => {
       // return styles[color]
       return {
@@ -36,25 +56,35 @@ class RoleSelectScene extends React.Component {
       }
     }
     return (
-      <View>
-        <Icon
+      <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
+        <View>
+          <Icon
             name={'ios-heart'}
             style={styles.headIcon}
-          />
-        <View style={styles.flowWrapper}>        
-          <Text style={styles.head}>Continue as</Text>
-          <TouchableHighlight style={ viewStyles('green') } onPress={() => this.clickHandler(Scenes.enterId) }>
-            <View>
-              <Text style={styles.content}>Child</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight style={viewStyles('blue')} onPress={ () => this.clickHandler(Scenes.enterId)}>
-            <View>
-              <Text style={styles.content}>Parent</Text>
-            </View>
-          </TouchableHighlight>
+            />
+          <View style={styles.flowWrapper}>
+            <TextInput
+              style={styles.textInput}
+              onChangeText={(text) => this.setState({ text })}
+              placeholder={this.state.text}
+              keyboardType='numeric'
+              autoFocus={true}
+              />
+            <Text style={styles.head}>Continue as</Text>
+            <TouchableHighlight style={viewStyles('green')} onPress={() => this.clickHandler(Scenes.enterId)}>
+              <View>
+                <Text style={styles.content}>Child</Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight style={viewStyles('blue')} onPress={() => this.clickHandler(Scenes.enterId)}>
+              <View>
+                <Text style={styles.content}>Parent</Text>
+              </View>
+            </TouchableHighlight>
+          </View>
+
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     )
   }
 }
@@ -75,6 +105,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     hideNavbar: () => {
       dispatch(hideNavbar())
+    },
+    addPatientId: (patientID) => {
+      dispatch(addPatientId(patientID))
     }
   }
 }
