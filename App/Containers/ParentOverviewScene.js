@@ -1,9 +1,12 @@
 import React, { PropTypes } from 'react'
-import { ListView, Text, View } from 'react-native'
+import { ListView, Text, View, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import CheckBox from 'react-native-check-box'
+import Toast from 'react-native-easy-toast'
 
 import { connect } from 'react-redux'
 import { changeScene, hideNavbar } from '../Reducers/action'
+import checklistItems from './checklistItems.json'
 
 // Styles
 import styles from './Styles/ParentOverviewSceneStyle'
@@ -40,27 +43,60 @@ class SummaryListView extends React.Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows([
-        'Complete forms', 'Watch learning videos'
-      ])
-    };
   }
 
-  _renderRow(data) {
-    return <View style={styles.row}><Text style={{ height: 40, borderWidth: 1 }}>{data}</Text></View>
+  componentWillMount() {
+      this.loadData();
   }
 
+  loadData() {
+      this.setState({
+          dataArray: checklistItems
+      })
+  }
+
+  onClick(data) {
+      data.checked = !data.checked;
+      let msg=data.checked? 'You checked ':'You unchecked '
+      this.toast.show(msg+data.name);
+  }
+
+  renderView() {
+      if (!this.state.dataArray || this.state.dataArray.length === 0) return;
+      var len = this.state.dataArray.length;
+      var views = [];
+      for (var i = 0; i < len; i ++) {
+        views.push(
+            <View key={i}>
+              <View style={styles.item}>
+                  {this.renderCheckBox(this.state.dataArray[i])}
+              </View>
+            </View>
+        )
+      }
+      return views;
+  }
+
+  renderCheckBox(data) {
+      var leftText = data.name;
+      return (
+          <CheckBox
+              style={{flex: 1, padding: 10}}
+              onClick={()=>this.onClick(data)}
+              isChecked={data.checked}
+              leftText={leftText}
+          />);
+  }
 
   render() {
     return (
-      <ListView
-        style={[styles.flowWrapper, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}
-        dataSource={this.state.dataSource}
-        renderRow={(data) => this._renderRow(data)}
-        />
-    );
+        <View style={[styles.flowWrapper, { flex: 0.5, flexShrink: 3, padding: 5, marginTop: 5 }]}>
+            <ScrollView>
+                {this.renderView()}
+            </ScrollView>
+            <Toast ref={e=>{this.toast=e}}/>
+        </View>
+    )
   }
 }
 
