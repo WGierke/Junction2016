@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import { connect } from 'react-redux'
 import { changeScene, hideNavbar } from '../Reducers/action'
@@ -7,7 +8,7 @@ import { changeScene, hideNavbar } from '../Reducers/action'
 // Styles
 import styles from './Styles/RoleSelectSceneStyle'
 import { Scenes } from '../Constants'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Metrics } from '../Themes'
 
 class RoleSelectScene extends React.Component {
   componentWillMount () {
