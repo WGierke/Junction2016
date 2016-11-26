@@ -22,6 +22,7 @@ const colors = {
   drawer: 'rgba(30, 30, 29, 0.95)',
   googleGreen: '#0F9D58',
   googleBlue: '#4285F4',
+  googleRed: '#DD4b39',
 }
 
 export default colors

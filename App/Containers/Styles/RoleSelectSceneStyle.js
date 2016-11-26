@@ -4,15 +4,23 @@ import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
 export default {
   ...ApplicationStyles.screen,
   viewHalf: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    margin: Metrics.doubleBaseMargin,
+    margin: Metrics.baseMargin,
     borderRadius: Metrics.buttonRadius,
+    borderWidth: 1,
+    borderColor: Colors.googleBlue,
   },
   head: {
-    fontSize: Metrics.text.large,
+    fontSize: Metrics.text.tiny,
     textAlign: 'center'
+  },
+  headIcon: {
+    fontSize: 120,
+    textAlign: 'center',
+    color: Colors.googleRed,
+    marginBottom: 100,
+    justifyContent: 'flex-start'
   },
   green: {
     backgroundColor: Colors.googleGreen,
@@ -21,11 +29,13 @@ export default {
     backgroundColor: Colors.googleBlue,
   },
   content: {
-    color: 'white',
-    fontSize: Metrics.text.medium,
+    color: Colors.googleBlue,
+    fontSize: Metrics.text.small,
     fontWeight: '200',
+    margin: Metrics.baseMargin,
   },
   flowWrapper: {
     flex: 1,
+    justifyContent: 'center'
   }
 }

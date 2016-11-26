@@ -32,21 +32,29 @@ class RoleSelectScene extends React.Component {
       // return styles[color]
       return {
         ...styles.viewHalf,
-        ...styles[color]
+        // ...styles[color]
       }
     }
     return (
-      <View style={styles.flowWrapper}>
-        <TouchableHighlight style={ viewStyles('green') } onPress={() => this.clickHandler(Scenes.enterId) }>
-          <View>
-            <Text style={styles.content}>Child</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={viewStyles('blue')} onPress={ () => this.clickHandler(Scenes.enterId)}>
-          <View>
-            <Text style={styles.content}>Parent</Text>
-          </View>
-        </TouchableHighlight>
+      <View>
+        <Icon
+            name={'ios-heart'}
+            size={Metrics.icons.xl}
+            style={styles.headIcon}
+          />
+        <View style={styles.flowWrapper}>        
+          <Text style={styles.head}>Continue as</Text>
+          <TouchableHighlight style={ viewStyles('green') } onPress={() => this.clickHandler(Scenes.enterId) }>
+            <View>
+              <Text style={styles.content}>Child</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight style={viewStyles('blue')} onPress={ () => this.clickHandler(Scenes.enterId)}>
+            <View>
+              <Text style={styles.content}>Parent</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
