@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+OperationTask.delete_all
+Task.delete_all
+Operation.delete_all
+
 Task.create!(name:"Preparation", description: "We prepare the operating room as well as the patient.")
 Task.create!(name:"Anaesthesia", description: "We sedate the patient to increase his feeling of well-being during the operation process.")
 Task.create!(name:"Operation", description: "We perform the actual medical surgery.")
