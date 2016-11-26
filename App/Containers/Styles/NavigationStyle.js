@@ -1,7 +1,13 @@
-import {StyleSheet} from 'react-native'
-import {Fonts, Metrics, Colors} from '../../Themes/'
+import { ApplicationStyles, Metrics, Colors, Fonts } from '../../Themes/'
 
-export default StyleSheet.create({
+export default {
+  ...ApplicationStyles.screen,
+  topBarLeft: {
+    color: "white"
+  },
+  topBarRight: {
+    color: 'white'
+  },
   applicationView: {
     flex: 1,
     backgroundColor: '#f7f7f7'
@@ -24,11 +30,5 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
     alignSelf: 'center'
-  },
-  topBarLeft: {
-    color: "white"
-  },
-  topBarRight: {
-    color: 'white'
-  },
-})
+  }
+}
