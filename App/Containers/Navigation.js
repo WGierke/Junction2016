@@ -32,13 +32,18 @@ class Navigation extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log("Receives new Props: ", nextProps.scene)
-    this.navigator.push({
-        component: nextProps.scene,
-        passProps: {
-          // title: nextProps.scene.title ? nextProps.scene.title : ''
-          ...nextProps.props
-        }
-      })
+    if(nextProps.scene != this.props.scene){
+      if(this.props.scene == Scenes.roleSelect)
+        this.navigator.pop()
+
+      this.navigator.push({
+          component: nextProps.scene,
+          passProps: {
+            // title: nextProps.scene.title ? nextProps.scene.title : ''
+            ...nextProps.props
+          }
+        })
+    }
   }
 
   renderScene (route, navigator) {
