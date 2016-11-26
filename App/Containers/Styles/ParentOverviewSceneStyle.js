@@ -18,7 +18,7 @@ export default {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    
+
   },
   matrixInner: {
     flex: 1,
@@ -41,6 +41,13 @@ export default {
   },
   row: {
       padding: 5,
+  },
+  item: {
+      flexDirection: 'row',
+  },
+  line: {
+      flex: 1,
+      height: 0.3,
+      backgroundColor: 'darkgray',
   }
-  
 }

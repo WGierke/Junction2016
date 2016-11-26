@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text, TouchableHighlight, StyleSheet, ScrollView, ListView } from 'react-native'
+import { View, Text, TouchableHighlight, StyleSheet, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import CheckBox from 'react-native-check-box'
+import Toast from 'react-native-easy-toast'
 
 import { connect } from 'react-redux'
 import { changeScene, hideNavbar } from '../Reducers/action'
@@ -11,9 +12,6 @@ import packlistItems from './packlistItems.json'
 import styles from './Styles/PackingListStyle'
 import { Scenes } from '../Constants'
 import { Metrics } from '../Themes'
-
-
-import Toast from 'react-native-easy-toast'
 
 class PackingList extends Component {
     constructor(props) {
@@ -73,7 +71,6 @@ class PackingList extends Component {
             </View>
         )
     }
-
 }
 
 const mapStateToProps = (state) => {
