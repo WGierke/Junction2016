@@ -9,6 +9,7 @@ const scenes = {
   adventureIntro: 'adventureIntroScene',
   treatmentplan: 'TreatmentPlan',
   missionDetail: 'MissionDetailScene',
+  childOverview: 'ChildOverview'
 }
 
 export default scenes

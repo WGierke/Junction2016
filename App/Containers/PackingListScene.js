@@ -87,7 +87,6 @@ class PackingList extends Component {
     render() {
         return (
             <View style={styles.container}>
-              <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Packing List</Text>
               <ScrollView>
                   {this.renderView()}
               </ScrollView>

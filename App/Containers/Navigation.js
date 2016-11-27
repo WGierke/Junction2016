@@ -15,6 +15,7 @@ import PackingList from './PackingListScene'
 import AdventureIntro from './AdventureIntroScene'
 import MissionDetail from './MissionDetailScene'
 import TreatmentPlan from './TreatmentPlanScene'
+import ChildOverview from './ChildOverviewScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -75,6 +76,8 @@ class Navigation extends Component {
         return <AdventureIntro navigator={navigator} {...route.passProps} />
       case Scenes.missionDetail:
         return <MissionDetail navigator={navigator} {...route.passProps} />
+      case Scenes.childOverview:
+        return <ChildOverview navigator={navigator} {...route.passProps} />
       default:
         return <RoleSelect navigator={navigator} {...route.passProps} />
     }
@@ -156,7 +159,7 @@ class Navigation extends Component {
         configureScene={this.configureScene}
         sceneStyle={sceneStyle()}
         navigationBar={this.renderNavBar()}
-        initialRouteStack={[{ component: Scenes.roleSelect }]}
+        initialRouteStack={[{ component: Scenes.childOverview }]}
         renderScene={this.renderScene}
         ref={(nav) => this.navigator = nav}
       />
