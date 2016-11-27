@@ -1,7 +1,7 @@
 import React from 'react'
-import { TouchableOpacity, Text, Image } from 'react-native'
+import { TouchableHighlight, Text, Image, View } from 'react-native'
 import styles from './Styles/ChildCardStyle'
-import { Images } from '../Themes'
+import { Images, Colors } from '../Themes'
 
 export default class ChildCard extends React.Component {
 
@@ -12,10 +12,13 @@ export default class ChildCard extends React.Component {
 
   render () {
     return (
-      <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-        <Image source={''}/>
-        <Text style={styles.buttonText}>{this.getText()}</Text>
-      </TouchableOpacity>
+    <View>
+            <TouchableHighlight style={styles.card} onPress={this.props.onPress} underlayColor={Colors.background}>
+               
+                    <Image style={styles.image} source={Images[this.props.imageURL]}/>
+               
+            </TouchableHighlight>
+      </View>
     )
   }
 }
@@ -25,3 +28,7 @@ ChildCard.propTypes = {
   onPress: React.PropTypes.func.isRequired,
   imageURL: React.PropTypes.string
 }
+
+
+
+                    // <Text style={styles.buttonText}>{this.getText()}</Text>

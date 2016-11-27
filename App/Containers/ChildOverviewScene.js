@@ -21,17 +21,22 @@ clickHandler () {
 render() {
   return (
     <ScrollView style={styles.container} ref='scrollView'>
-      <ChildCard imageURL='' onPress={() => {}} text='Foo'/>
-      <ChildCard imageURL='' onPress={() => {}} text='Foo'/>
-      <ChildCard imageURL='' onPress={() => {}} text='Foo'/>
+      <Text>Separator</Text>
+      <View>
       {
-
           this.props.journey.filter((waypoint) => { return waypoint.section === 'Preparation' } ).map( (waypoint) => (
               <ChildCard imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
           ))
-
-          
       }
+      </View>
+      <Text>Separator</Text>
+      <View>
+      {
+          this.props.journey.filter((waypoint) => { return waypoint.section === 'Mission'} ).map( (waypoint) => (
+              <ChildCard imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
+          ))
+      }
+      </View>
     </ScrollView>
   );
 }
