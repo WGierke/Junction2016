@@ -18,7 +18,15 @@ const SECTIONS = [
   },
   {
     title: 'Operation preparition',
-    content: [' Blood sample examination', 'ECG', 'Lung function test', 'Narcosis consultation'],
+    content: ['Blood sample examination', 'ECG', 'Lung function test', 'Narcosis consultation', 'Anxiety Medications', 'Receive OP Cloth'],
+  },
+  {
+    title: 'Operation',
+    content: ['Prep room: anesthesia, insert catheter', 'Operating room: surgery'],
+  },
+  {
+    title: 'Aftercare',
+    content: ['Remove redon drainage', 'Follow-up examination', 'Physical therapy'],
   }
 ];
 
@@ -39,17 +47,21 @@ class TreatmentPlan extends Component {
     }
 
     _renderContent(section) {
-      return (
-        <View style={styles.content}>
-          <Text style={styles.headerText}>{section.content[0]}</Text>
-        </View>
-      );
+      var len = section.content.length;
+      var views = [];
+      for (var i = 0; i < len; i ++) {
+        views.push(
+          <View style={styles.content}>
+            <Text style={styles.headerText}>{section.content[i]}</Text>
+          </View>
+        )
+      }
+      return views;
     }
 
     render() {
         return (
             <View style={styles.container}>
-              <Text style={ { fontSize: 20, textDecorationLine: 'underline' } }>Treatment Plan</Text>
               <Accordion
                 sections={SECTIONS}
                 renderHeader={this._renderHeader}
