@@ -11,7 +11,8 @@ export default {
       width: 165,
       justifyContent: 'center',
       alignSelf: 'center',
-      margin: 22,
+      marginTop: 15,
+      marginBottom: 15,
       borderRadius: Metrics.buttonRadius,
   },
   container: {
