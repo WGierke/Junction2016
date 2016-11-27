@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, TouchableHighlight, StyleSheet, ScrollView, ListView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import CheckBox from 'react-native-check-box'
 import Accordion from 'react-native-collapsible/Accordion';
 
 import { connect } from 'react-redux'
@@ -15,7 +14,7 @@ import { Metrics } from '../Themes'
 const SECTIONS = [
   {
     title: 'Diagnosis and Admission',
-    content: ['Talk with doctor', 'Xray broken leg', 'Receive id bracelet'],
+    content: ['Talk with doctor', 'Xray broken leg', 'Receive id bracelet']
   },
   {
     title: 'Operation preparition',
@@ -42,7 +41,7 @@ class TreatmentPlan extends Component {
     _renderContent(section) {
       return (
         <View style={styles.content}>
-          <Text>{section.content[0]}</Text>
+          <Text style={styles.headerText}>{section.content[0]}</Text>
         </View>
       );
     }
