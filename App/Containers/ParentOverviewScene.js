@@ -138,7 +138,18 @@ class ParentOverviewScene extends React.Component {
   }
 
   clickHandler (name) {
-    this.props.changeScene({name, title: name==Scenes.treatment ? this.props.treatment : ''}, false)
+    let title = ''
+    switch(name){
+      case 'TreatmentPlan':
+        title = 'Treatment'
+        break
+      case 'PackingList':
+        title = 'Packinglist'
+        break
+      default:
+        title = ''
+    }
+    this.props.changeScene({name, title: name==Scenes.treatment ? this.props.treatment : title}, false)
   }
 
   render() {
@@ -174,3 +185,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ParentOverviewScene)
+
+
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}

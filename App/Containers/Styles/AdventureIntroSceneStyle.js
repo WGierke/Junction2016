@@ -7,6 +7,13 @@ export default {
     flexDirection: 'column',
     alignItems: "flex-end"
   },
+  background: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    width: Metrics.screenWidth,
+    height: Metrics.screenHeight,
+    top: 0,
+  },
   avatar: {
     height: Metrics.screenHeight / 2,
     right: -50,

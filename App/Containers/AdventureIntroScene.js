@@ -41,21 +41,21 @@ class AdventureIntro extends React.Component {
   render() {
     const dismissKeyboard = require('dismissKeyboard')
     return (
-      <View style={styles.introView}>
-        <View style={styles.dialog}>
-          <Text style={styles.dialogText}>Hello there!</Text>
-          <Text style={styles.dialogTextRight}>Seems like we both are going to spend some time together.</Text>
-          <Text style={styles.dialogText}>It's going to be an interesting adventure...</Text>
-          <Text style={styles.dialogTextRight}>Lets do it! :)</Text>
+        <View style={styles.introView}>        
+          <View style={styles.dialog}>
+            <Text style={styles.dialogText}>Hello there!</Text>
+            <Text style={styles.dialogTextRight}>Seems like we both are going to spend some time together.</Text>
+            <Text style={styles.dialogText}>It's going to be an interesting adventure...</Text>
+            <Text style={styles.dialogTextRight}>Lets do it! :)</Text>
+          </View>
+          <View style={styles.avatarWrapper}>
+            <Image
+              style={styles.avatar}
+              resizeMode='contain'
+              source={Images.bear}
+              />
+          </View>
         </View>
-        <View style={styles.avatarWrapper}>
-          <Image
-            style={styles.avatar}
-            resizeMode='contain'
-            source={Images.bear}
-            />
-        </View>
-      </View>
     )
   }
 }
