@@ -1,11 +1,11 @@
-# ILOCKIT
+# Hospital Adventure
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
 ## :arrow_up: How to Setup
 
-**Step 1:** git clone this repo:
+**Step 1:** git clone this repo
 
-**Step 2:** cd to the cloned repo:
+**Step 2:** cd to the cloned repo
 
 **Step 3:** Install the Application with `npm install`
 
