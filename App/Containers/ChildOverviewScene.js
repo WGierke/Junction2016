@@ -21,7 +21,7 @@ clickHandler () {
 render() {
   return (
     <ScrollView style={styles.container} ref='scrollView'>
-      <Text>Separator</Text>
+      <Text style={styles.separator}>Preparation</Text>
       <View>
       {
           this.props.journey.filter((waypoint) => { return waypoint.section === 'Preparation' } ).map( (waypoint) => (
@@ -29,11 +29,11 @@ render() {
           ))
       }
       </View>
-      <Text>Separator</Text>
+      <Text style={styles.separator}>Mission</Text>
       <View>
       {
           this.props.journey.filter((waypoint) => { return waypoint.section === 'Mission'} ).map( (waypoint) => (
-              <ChildCard imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
+              <ChildCard style={styles.childCard} imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
           ))
       }
       </View>

@@ -12,8 +12,8 @@ export default class ChildCard extends React.Component {
 
   render () {
     return (
-    <View>
-            <TouchableHighlight style={styles.card} onPress={this.props.onPress} underlayColor={Colors.background}>
+    <View style={styles.card}>
+            <TouchableHighlight onPress={this.props.onPress} underlayColor={Colors.background}>
                
                     <Image style={styles.image} source={Images[this.props.imageURL]}/>
                

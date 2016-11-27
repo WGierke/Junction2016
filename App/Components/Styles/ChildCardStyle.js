@@ -5,10 +5,10 @@ import { Fonts, Colors, Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
   card: {
-    borderRadius: 5,
+    borderRadius: Metrics.buttonRadius,
     marginHorizontal: Metrics.section,
     marginVertical: Metrics.baseMargin,
-    backgroundColor: Colors.fire,
+    borderWidth: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
     flex: 1,
@@ -29,9 +29,8 @@ export default StyleSheet.create({
     marginVertical: Metrics.baseMargin,
     resizeMode: 'contain',
     width: 0.8*Metrics.screenWidth,
-    margin: 5,
-    padding: 5,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignSelf: 'center',
     
     flexWrap: 'wrap'
   }
