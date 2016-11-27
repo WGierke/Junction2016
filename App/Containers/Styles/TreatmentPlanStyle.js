@@ -14,8 +14,7 @@ export default {
   },
   contentText: {
     fontWeight: '100',
-    fontSize: Metrics.text.small,
-    paddingBot: 10
+    fontSize: Metrics.text.small
   },
   container: {
     padding: Metrics.baseMargin,

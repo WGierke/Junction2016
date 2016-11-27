@@ -51,7 +51,7 @@ class TreatmentPlan extends Component {
       var views = [];
       for (var i = 0; i < len; i ++) {
         views.push(
-          <View style={styles.content}>
+          <View style={styles.content} key={i}>
             <Text style={styles.contentText}>{section.content[i]}</Text>
           </View>
         )
