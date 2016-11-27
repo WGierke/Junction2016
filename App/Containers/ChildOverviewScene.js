@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { View, Text, TouchableHighlight, ScrollView, ListView } from 'react-native'
+import { View, Text, TouchableHighlight, ScrollView, ListView, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import ChildCard from '../Components/ChildCard'
 
@@ -10,36 +10,47 @@ import { changeScene, hideNavbar, setCurrentStep } from '../Reducers/action'
 // Styles
 import styles from './Styles/ChildOverviewSceneStyle'
 import { Scenes } from '../Constants'
-import { Metrics } from '../Themes'
+import { Metrics, Colors, Images } from '../Themes'
 
 class ChildOverviewScene extends React.Component {
  
-clickHandler () {
+ componentWillMount () {
+    this.clickHandler2 = this.clickHandler2.bind(this)
+  }
 
+  componentDidMount () {
+    this.clickHandler2 = this.clickHandler2.bind(this)
+  }
+
+
+clickHandler2 () {
+  this.props.changeScene({name: Scenes.missionDetail, wayPointId: 2, title: 'Suitability'}, false)
 }
 
 render() {
-  return (
-    <ScrollView style={styles.container} ref='scrollView'>
-      <Text style={styles.separator}>Preparation</Text>
-      <View>
-      {
-          this.props.journey.filter((waypoint) => { return waypoint.section === 'Preparation' } ).map( (waypoint) => (
-              <ChildCard imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
-          ))
-      }
-      </View>
-      <Text style={styles.separator}>Mission</Text>
-      <View>
-      {
-          this.props.journey.filter((waypoint) => { return waypoint.section === 'Mission'} ).map( (waypoint) => (
-              <ChildCard style={styles.childCard} imageURL={waypoint.image} onPress={() => {}} text={waypoint.title}/>
-          ))
-      }
-      </View>
-    </ScrollView>
-  );
+    return (
+        <ScrollView style={[styles.container, { flex: 1 }]} contentContainerStyle={styles.containerContent} ref='scrollView'>
+            <Text style={styles.separator}>Preparation</Text>
+            {
+                this.props.journey.filter((waypoint) => { return waypoint.section === 'Preparation' }).map((waypoint) => (
+                    <TouchableHighlight key={waypoint.title} onPress={this.clickHandler2 } underlayColor={Colors.background} style={styles.childCard}>
+                        <Image style={styles.image} source={Images[waypoint.image]} />
+                    </TouchableHighlight>
+                ))
+            }
+            <Text style={styles.separator}>Mission</Text>
+            {
+                this.props.journey.filter((waypoint) => { return waypoint.section === 'Mission' }).map((waypoint) => (
+                    <TouchableHighlight key={waypoint.title} onPress={this.clickHandler2} underlayColor={Colors.background} style={styles.childCard}>
+                        <Image style={styles.image} source={Images[waypoint.image]} />
+                    </TouchableHighlight>
+                ))
+            }
+        </ScrollView>
+
+    )
 }
+
 }
 
 ChildOverviewScene.PropTypes = {

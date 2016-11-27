@@ -9,7 +9,7 @@ export default StyleSheet.create({
     marginHorizontal: Metrics.section,
     marginVertical: Metrics.baseMargin,
     borderWidth: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     flexWrap: 'wrap'

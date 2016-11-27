@@ -159,7 +159,7 @@ class Navigation extends Component {
         configureScene={this.configureScene}
         sceneStyle={sceneStyle()}
         navigationBar={this.renderNavBar()}
-        initialRouteStack={[{ component: Scenes.childOverview }]}
+        initialRouteStack={[{ component: Scenes.roleSelect }]}
         renderScene={this.renderScene}
         ref={(nav) => this.navigator = nav}
       />

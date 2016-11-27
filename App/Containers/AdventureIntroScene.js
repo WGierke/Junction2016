@@ -23,7 +23,7 @@ class AdventureIntro extends React.Component {
   }
 
   clickHandler () {
-    this.props.changeScene({name: Scenes.missionDetail, wayPointId: 2, title: 'Mission xy'}, false)
+    this.props.changeScene({name: Scenes.childOverview, title: 'Mission xy'}, false)
   }
 
   renderNavbar() {
