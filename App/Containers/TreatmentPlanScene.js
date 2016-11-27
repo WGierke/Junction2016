@@ -9,12 +9,12 @@ import { changeScene, hideNavbar } from '../Reducers/action'
 // Styles
 import styles from './Styles/TreatmentPlanStyle'
 import { Scenes } from '../Constants'
-import { Metrics } from '../Themes'
+import { Metrics, Colors } from '../Themes'
 
 const SECTIONS = [
   {
     title: 'Diagnosis and Admission',
-    content: ['Talk with doctor', 'Xray broken leg', 'Receive id bracelet']
+    content: ['Talk with your doctor', 'Xray of broken leg', 'Receive your ID bracelet']
   },
   {
     title: 'Operation preparition',
@@ -22,7 +22,7 @@ const SECTIONS = [
   },
   {
     title: 'Operation',
-    content: ['Prep room: anesthesia, insert catheter', 'Operating room: surgery'],
+    content: ['Prep room: anesthesia', 'Operating room: surgery'],
   },
   {
     title: 'Aftercare',
@@ -41,7 +41,7 @@ class TreatmentPlan extends Component {
     _renderHeader(section) {
       return (
         <View style={styles.header}>
-          <Text style={styles.headerText}>{section.title}</Text>
+          <Text style={styles.headerText} underlayColor={Colors.background}>{section.title}</Text>
         </View>
       );
     }
@@ -52,7 +52,7 @@ class TreatmentPlan extends Component {
       for (var i = 0; i < len; i ++) {
         views.push(
           <View style={styles.content}>
-            <Text style={styles.headerText}>{section.content[i]}</Text>
+            <Text style={styles.contentText}>{section.content[i]}</Text>
           </View>
         )
       }
