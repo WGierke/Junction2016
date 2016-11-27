@@ -38,7 +38,7 @@ class Grid extends React.Component {
             <IconCell iconName='ios-pulse' description='Live Updates' backgroundColor={Colors.googleGreen} />
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.enterId)} underlayColor={Colors.background} style={styles.matrixInner}>
+        <TouchableHighlight onPress={() => this.props.clickHandler(Scenes.treatmentplan)} underlayColor={Colors.background} style={styles.matrixInner}>
           <View>
             <IconCell iconName='ios-medical' description='Treatment' backgroundColor={Colors.googleRed} />
           </View>

@@ -13,6 +13,7 @@ import Treatment from './TreatmentScene'
 import ParentOverview from './ParentOverviewScene'
 import PackingList from './PackingListScene'
 import AdventureIntro from './AdventureIntroScene'
+import TreatmentPlan from './TreatmentPlanScene'
 
 // Styles
 import styles from './Styles/RootContainerStyle'
@@ -57,8 +58,8 @@ class Navigation extends Component {
     switch (route.component) {
       case Scenes.connect:
         return <Connect navigator={navigator} {...route.passProps} />
-      case Scenes.enterId:
-        return <EnterID navigator={navigator} {...route.passProps} />
+      case Scenes.treatmentplan:
+        return <TreatmentPlan navigator={navigator} {...route.passProps} />
       case Scenes.roleSelect:
         return <RoleSelect navigator={navigator} {...route.passProps} />
       case Scenes.treatment:
