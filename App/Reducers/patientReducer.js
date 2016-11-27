@@ -62,7 +62,7 @@ let journeyData = [
     image: 'background1',
   },
   {
-    id: 1,
+    id: 2,
     section: 'Preparation',
     title: 'Suitability',
     description: 'In order to go to the mission we have to be fit enough for it',
@@ -70,7 +70,7 @@ let journeyData = [
     image: 'background2',
   },
   {
-    id: 1,
+    id: 3,
     section: 'Mission',
     title: 'Sleeping Well',
     description: 'To start our mission we first need to talk to Dr. XY.',
