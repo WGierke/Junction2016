@@ -14,24 +14,16 @@ import { Metrics, Colors, Images } from '../Themes'
 require('../Images/Bear.png')
 
 class AdventureIntro extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: '',
-    };
-  }
   componentWillMount () {
-    this.props.hideNavbar()
+    this.clickHandler = this.clickHandler.bind(this)
   }
 
   componentDidMount () {
     this.clickHandler = this.clickHandler.bind(this)
   }
 
-  clickHandler (name) {
-    let title = 'Carl Fredricksen (' + this.state.text + ')'
-    this.props.addPatientId(this.state.text)
-    this.props.changeScene({name, title}, false)
+  clickHandler () {
+    this.props.changeScene({name: Scenes.missionDetail, wayPointId: 2, title: 'Mission xy'}, false)
   }
 
   renderNavbar() {
@@ -49,11 +41,13 @@ class AdventureIntro extends React.Component {
             <Text style={styles.dialogTextRight}>Lets do it! :)</Text>
           </View>
           <View style={styles.avatarWrapper}>
-            <Image
-              style={styles.avatar}
-              resizeMode='contain'
-              source={Images.bear}
-              />
+            <TouchableHighlight onPress={this.clickHandler} underlayColor={Colors.background}>
+              <Image
+                style={styles.avatar}
+                resizeMode='contain'
+                source={Images.bear}
+                />
+            </TouchableHighlight>
           </View>
         </View>
     )
@@ -73,7 +67,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     changeScene: (props, showNavbar=true) => {
       dispatch(changeScene(props))
-      if (!showNavbar) hideNavbar()
     },
     hideNavbar: () => {
       dispatch(hideNavbar())

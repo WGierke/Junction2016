@@ -27,7 +27,6 @@ export default {
     position: 'absolute',
     paddingLeft: Metrics.baseMargin,
     // backgroundColor: 'blue',
-    textAlign: 'left',
     flexDirection: 'column'
   },
   dialogText: {

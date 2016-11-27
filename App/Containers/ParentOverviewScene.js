@@ -146,6 +146,9 @@ class ParentOverviewScene extends React.Component {
       case 'PackingList':
         title = 'Packinglist'
         break
+      case Scenes.registrationForm:
+        title = 'Patient Data'
+        break
       default:
         title = ''
     }

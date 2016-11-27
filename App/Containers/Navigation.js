@@ -13,6 +13,7 @@ import Treatment from './TreatmentScene'
 import ParentOverview from './ParentOverviewScene'
 import PackingList from './PackingListScene'
 import AdventureIntro from './AdventureIntroScene'
+import MissionDetail from './MissionDetailScene'
 import TreatmentPlan from './TreatmentPlanScene'
 
 // Styles
@@ -72,6 +73,8 @@ class Navigation extends Component {
         return <PackingList navigator={navigator} {...route.passProps} />
       case Scenes.adventureIntro:
         return <AdventureIntro navigator={navigator} {...route.passProps} />
+      case Scenes.missionDetail:
+        return <MissionDetail navigator={navigator} {...route.passProps} />
       default:
         return <RoleSelect navigator={navigator} {...route.passProps} />
     }
