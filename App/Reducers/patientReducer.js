@@ -1,4 +1,30 @@
 import { combineReducers } from 'redux'
+let journeyData = [
+  {
+    id: 1,
+    section: 'Preparation',
+    title: 'Get Ready',
+    description: 'First of all we need to do something important',
+    executed: false,
+    image: 'background1',
+  },
+  {
+    id: 2,
+    section: 'Preparation',
+    title: 'Suitability',
+    description: 'In order to go to the mission we have to be fit enough for it',
+    executed: false,
+    image: 'background2',
+  },
+  {
+    id: 3,
+    section: 'Mission',
+    title: 'Sleeping Well',
+    description: 'To start our mission we first need to talk to Dr. XY.',
+    executed: false,
+    image: 'background3',
+  }
+]
 
 const id = (state = "", action) => {
   switch (action.type) {
@@ -48,33 +74,8 @@ const journey = (state=journeyData, action) => {
 
 export default combineReducers({
   id,
-  treatment
+  treatment,
+  journey
 })
 
 
-let journeyData = [
-  {
-    id: 1,
-    section: 'Preparation',
-    title: 'Get Ready',
-    description: 'First of all we need to do something important',
-    executed: false,
-    image: 'background1',
-  },
-  {
-    id: 2,
-    section: 'Preparation',
-    title: 'Suitability',
-    description: 'In order to go to the mission we have to be fit enough for it',
-    executed: false,
-    image: 'background2',
-  },
-  {
-    id: 3,
-    section: 'Mission',
-    title: 'Sleeping Well',
-    description: 'To start our mission we first need to talk to Dr. XY.',
-    executed: false,
-    image: 'background3',
-  }
-]
