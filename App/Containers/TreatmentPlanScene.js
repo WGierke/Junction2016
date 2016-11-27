@@ -40,7 +40,7 @@ class TreatmentPlan extends Component {
 
     _renderHeader(section) {
       return (
-        <View style={styles.header}>
+        <View style={styles.header} underlayColor={Colors.background}>
           <Text style={styles.headerText} underlayColor={Colors.background}>{section.title}</Text>
         </View>
       );
