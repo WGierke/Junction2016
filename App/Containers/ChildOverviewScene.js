@@ -68,8 +68,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeScene: (name, showNavbar = true) => {
-      dispatch(changeScene({ name, showNavbar }))
+    changeScene: (props, showNavbar = true) => {
+      dispatch(changeScene(props))
     },
     hideNavbar: () => {
       dispatch(hideNavbar())
