@@ -1,5 +1,5 @@
 {
-  "name": "HospitalManager",
+  "name": "BVGRide",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -41,6 +41,7 @@
     "react-native-form-generator": "0.9.9",
     "react-native-i18n": "^0.1.1",
     "react-native-maps": "^0.8.2",
+    "react-native-navigation": "^1.0.30",
     "react-native-router-flux": "^3.35.0",
     "react-native-typewriter": "^0.3.0",
     "react-native-vector-icons": "^2.1.0",
