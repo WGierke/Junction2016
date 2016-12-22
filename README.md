@@ -1,6 +1,8 @@
 # Hospital Adventure
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
+A react-native App that showcases the Proof of Concept for our Intention.
+
 ### Inspiration
 A child's hospital experience is often frightening, exhausting and overall unpleasant. We change that by creating a unique storyline for a child's hospital stay.
 
